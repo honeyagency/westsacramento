@@ -1,0 +1,118 @@
+.hdr-logo-link {
+    display: inline-block;
+
+    .icon-logo {
+        display: inline-block;
+
+        svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    width: 95px;
+    height: 95px;
+
+    .icon-logo {
+        width: 95px;
+        height: 95px;
+
+        a {
+            width: 95px;
+            height: 95px;
+        }
+    }
+
+    @include media($screen-xs) {
+        width: 100px;
+        height: 100px;
+
+        .icon-logo {
+            width: 100px;
+            height: 100px;
+
+            a {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+
+
+    @include media($screen-sm) {
+        width: 120px;
+        height: 120px;
+
+        .icon-logo {
+            width: 120px;
+            height: 120px;
+
+            a {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    }
+
+
+    @include media($screen-md) {
+        width: 180px;
+        height: 180px;
+
+        .icon-logo {
+            width: 180px;
+            height: 180px;
+
+            a {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    }
+
+
+    @include media($screen-lg) {
+        width: 200px;
+        height: 200px;
+
+        .icon-logo {
+            width: 200px;
+            height: 200px;
+
+            a {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+
+
+    @include media($screen-xl) {
+        width: 250px;
+        height: 250px;
+
+        .icon-logo {
+            width: 250px;
+            height: 250px;
+
+            a {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }
+}
+
+.icon-search {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.icon-angle-down {
+    display: inline-block;
+    height: 7px;
+    width: 9px;
+    position: relative;
+    margin-left: 0.7em;
+}

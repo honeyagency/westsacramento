@@ -65,7 +65,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 add_action('admin_menu', 'disable_default_dashboard_widgets');
 
 // adding any custom widgets
-add_action('wp_dashboard_setup', 'bones_custom_dashboard_widgets');
+// add_action('wp_dashboard_setup', 'bones_custom_dashboard_widgets');
 
 // Remove WP 4.2 emoji
 remove_action('wp_head', 'print_emoji_detection_script', 7);
