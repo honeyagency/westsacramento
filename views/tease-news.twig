@@ -1,0 +1,12 @@
+{% extends "tease.twig" %}
+{% block content %}
+	<article class="tease tease-{{news.post_type}}" id="tease-{{news.ID}}">
+		<time datetime="{{ news.post_date|date('Y-m-d')}}">{{news.post_date|date}}</time>
+		<h2 class="h3 font--abel"><a class="color--black" href="{{news.link}}">{{ news.title|length > 80 ? news.title|slice(0, 80) ~ '...' : news.title  }}</a></h2>
+		{% if news.get_thumbnail %}
+			<img src="{{news.thumbnail.src}}" />
+		{% endif %}
+		<br><a class="color--blue text--uppercase font--small" href="{{news.link}}">Read More</a>
+	</article>
+	
+{% endblock %}

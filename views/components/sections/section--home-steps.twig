@@ -1,0 +1,10 @@
+<section class="section--home-steps spacing--dsk-vert-3">
+	<h4 class="text--center text--uppercase font--bold">{{home.steps.title}}</h4>
+	<hr class="small">
+	{# {{home|print_r}} #}
+	<div class="block--steps-wrap flex flex--double flex--wrap justify--between align--items-stretch text--center spacing--vert-2 spacing--horiz-3">
+		{% for step in home.steps.steps %}
+			{% include 'components/blocks/block--home-step.twig' %}
+		{% endfor %}
+	</div>
+</section>

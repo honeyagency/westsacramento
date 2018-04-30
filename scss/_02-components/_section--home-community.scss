@@ -1,0 +1,14 @@
+.section--home-community {
+    @include media($screen-md) {
+        span.border {
+            border-right: 1px solid;
+        }
+    }
+
+
+    @include media($max-md) {
+        span.border {
+            display: none;
+        }
+    }
+}

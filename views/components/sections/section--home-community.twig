@@ -1,0 +1,19 @@
+<section class="section--home-community bg--yellow">
+	<img src="{{home.community.image|resize(300,100)}}" data-original="{{home.community.image|resize(1080,360)}}" alt="{{home.community.image.caption}}" data-original-set="{{home.community.image|resize(640, 213)}} 640w, {{home.community.image|resize(750, 250)}} 750w, {{home.community.image|resize(1080,360)}} 1080w, {{home.community.image|resize(1920,640)}} 1920w, {{home.community.image|resize(2880,960)}} 2880w" sizes="100vw" width="100%">
+	<div class="flex flex--double flex--wrap justify--between spacing--gutter spacing--vert-3 spacing--dsk-vert-3">
+		<div class="grid--one">
+			<h4 class="text--center text--uppercase font--bold">{{home.community.title}}</h4>
+			<hr class="small">
+		</div>
+		{% for item in home.community.item %}
+			<div class="block--success margin--top-2 margin--dsk-vert-4 grid--one grid--sm-third grid--md-third text--center font--abel">
+				<div class="h1 ">{{item.number}}</div>
+				<div class="font--large text--uppercase short">{{item.text}}</div>
+			</div>
+			{% if loop.last %}{% else %}<span class="border"></span>{% endif %}
+		{% endfor %}
+		<div class="grid--one margin--top-1 margin--vert-dsk-0">
+		<a class="button color--black center" href="{{home.community.link.url}}" target="{{home.community.link.target}}" title="{{home.community.link.title}}">{{home.community.link.title}}</a>
+	</div>
+	</div>
+</section>

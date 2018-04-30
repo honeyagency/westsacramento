@@ -60,6 +60,10 @@ p.font--large {
     font-style: normal !important;
 }
 
+.font--abel {
+    font-family: $second-font !important;
+}
+
 .text--center {
     text-align: center !important;
 }
@@ -80,6 +84,10 @@ p.font--large {
     text-transform: capitalize !important;
 }
 
+.transform--no {
+    text-transform: none !important;
+}
+
 .decoration--no {
     text-decoration: none !important;
 }
@@ -98,6 +106,10 @@ p.font--large {
 
 .letter--3 {
     letter-spacing: 3px;
+}
+
+.short {
+    line-height: 1.2;
 }
 
 hr {

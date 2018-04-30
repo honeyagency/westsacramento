@@ -1,5 +1,11 @@
 .icon-angle-down { background-image: url('app/icons/angle-down.png'); background-repeat: no-repeat; }
 
+.icon-base--1 { background-image: url('app/icons/base--1.png'); background-repeat: no-repeat; }
+
+.icon-base--2 { background-image: url('app/icons/base--2.png'); background-repeat: no-repeat; }
+
+.icon-base--3 { background-image: url('app/icons/base--3.png'); background-repeat: no-repeat; }
+
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }
 
 .icon-search { background-image: url('app/icons/search.png'); background-repeat: no-repeat; }

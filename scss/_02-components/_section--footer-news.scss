@@ -1,0 +1,7 @@
+.section--footer-news{
+	.tease-news{
+		@extend .grid--one;
+		@extend .grid--sm-half;
+		@extend .grid--md-half;
+	}
+}

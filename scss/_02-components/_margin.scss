@@ -1,3 +1,13 @@
+.margin--bot-1{margin-bottom: 1em * $grid;}
+.margin--bot-2{margin-bottom: 2em * $grid;}
+.margin--bot-3{margin-bottom: 3em * $grid;}
+.margin--bot-4{margin-bottom: 4em * $grid;}
+
+.margin--top-1{margin-top: 1em * $grid;}
+.margin--top-2{margin-top: 2em * $grid;}
+.margin--top-3{margin-top: 3em * $grid;}
+.margin--top-4{margin-top: 4em * $grid;}
+
 
 .margin--vert-1{margin-top:1em * $grid; margin-bottom: 1em * $grid;}
 .margin--vert-2{margin-top:2em * $grid; margin-bottom: 2em * $grid;}
@@ -7,6 +17,7 @@
 .margin--vert-6{margin-top:6em * $grid; margin-bottom: 6em * $grid;}
 
 @include media($screen-sm) {
+    .margin--dsk-vert-0{margin-top:0em * $grid; margin-bottom: 0em * $grid;}
     .margin--dsk-vert-1{margin-top:1em * $grid; margin-bottom: 1em * $grid;}
     .margin--dsk-vert-2{margin-top:2em * $grid; margin-bottom: 2em * $grid;}
     .margin--dsk-vert-3{margin-top:3em * $grid; margin-bottom: 3em * $grid;}
@@ -15,6 +26,7 @@
     .margin--dsk-vert-6{margin-top:6em * $grid; margin-bottom: 6em * $grid;}
 }
 
+.margin--horiz-0{margin-left:0em * $grid; margin-right: 0em * $grid;}
 .margin--horiz-1{margin-left:1em * $grid; margin-right: 1em * $grid;}
 .margin--horiz-2{margin-left:2em * $grid; margin-right: 2em * $grid;}
 .margin--horiz-3{margin-left:3em * $grid; margin-right: 3em * $grid;}
@@ -36,7 +48,7 @@
 .margin--mob-bot-3{@include media($max-sm){margin-bottom: 3em * $grid;}}
 .margin--mob-bot-4{@include media($max-sm){margin-bottom: 4em * $grid;}}
 
-.margin--bot-1{margin-bottom: 1em * $grid;}
-.margin--bot-2{margin-bottom: 2em * $grid;}
-.margin--bot-3{margin-bottom: 3em * $grid;}
-.margin--bot-4{margin-bottom: 4em * $grid;}
+
+.marno, .mar--no{
+    margin: 0;
+}

@@ -1,0 +1,79 @@
+{
+    "key": "group_5ae75ab1df7c8",
+    "title": "Success Story",
+    "fields": [
+        {
+            "key": "field_5ae75ab6bb146",
+            "label": "A Note on Titles",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The title of this post should be the name of the person the story regards. Elsewhere on the site, it will be displayed in the context of being a name.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5ae75b28bb14a",
+            "label": "Graduating School \/ Achievement",
+            "name": "graduating_school__achievement",
+            "type": "text",
+            "instructions": "Include context of the achievement (WUSD Gradutate)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ae75b96bb14c",
+            "label": "Short Description",
+            "name": "short_description",
+            "type": "textarea",
+            "instructions": "Format the content of this like a pitch, keep to one sentence.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "success_story"
+            }
+        ]
+    ],
+    "menu_order": -1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1525111768
+}
