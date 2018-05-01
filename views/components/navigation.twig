@@ -2,7 +2,7 @@
 	<ul class="dsk--flex flex--wrap justify--between">
 		{% for item in menu.get_items %}
 			<li class="nav-item {{item.classes | join(' ')}}">
-				<a class="nav-link text--uppercase font--bold letter--1 color--white" href="{{item.get_link}}">{{item.title}}</a>
+				<a class="nav-link text--uppercase color--white" href="{{item.get_link}}">{{item.title}}</a>
 				{% if item.get_children %}
 					<a class="trigger--sub"><label class="hidden--dsk">+</label></a>
 					<ul class="nav nav-drop">
@@ -17,6 +17,6 @@
 		{% endfor %}
 		<li class="hidden--mob nav-item search"><i class="icon-search" data-grunticon-embed></i></li>
 
-		<li class="hidden--mob nav-item language font--tiny color--yellow">Language   <i class="icon-angle-down" data-grunticon-embed></i></li>
+		<li class="hidden--mob nav-item language font--tiny color--yellow">Lang<span class="large--hide">uage</span><i class="icon-angle-down" data-grunticon-embed></i></li>
 	</ul>
 </nav><!-- #nav -->

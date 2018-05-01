@@ -1,4 +1,4 @@
-.section--home-community {
+.section--home-community, .section--base-community {
     @include media($screen-md) {
         span.border {
             border-right: 1px solid;

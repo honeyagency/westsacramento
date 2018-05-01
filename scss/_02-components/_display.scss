@@ -11,7 +11,7 @@
 }
 
 .large--hide {
-    @include media($screen-md) {
+    @include media($max-lg) {
         display: none !important;
     }
 }

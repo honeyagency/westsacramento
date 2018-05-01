@@ -1,0 +1,17 @@
+.section--base-started {
+    border-top: 15px solid;
+    border-bottom: 15px solid;
+
+    &.border--blue {
+        border-color: ($blue);
+    }
+
+    &.border--yellow {
+        border-color: ($yellow);
+    }
+
+    &.border--red {
+        border-color: ($red);
+    }
+    
+}

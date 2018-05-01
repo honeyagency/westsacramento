@@ -1,0 +1,17 @@
+<section class="section--base-stories bg--{{base.header.color}}">
+	{% for story in base.stories %}
+		<div class="slide flex flex--wrap justify--between align--items-stretch">
+			<div class="grid--one grid--sm-half nog bg" style="background-image:url('{{story.image}}')"></div>
+			<div class="grid--one grid--sm-half nog spacing--gutter spacing--vert-2 bg--{{base.header.color}}">
+				<h4 class="inherit">Success Story</h4>
+				<hr class="small margin--horiz-0 inherit">
+				<div class="spacing--vert-2">
+				<strong class="block inherit">{{story.title}}</strong>
+				<div class="text--uppercase inherit">{{story.achievement}}</div>
+			</div>
+				<div class="font--abel short font--large inherit margin--bot-2">{{story.description}}</div>
+				<a class="button" href="{{story.link}}" target="_blank" title="Read More About{{story.title}}">Read More</a>
+			</div>
+		</div>
+	{% endfor %}
+</section>

@@ -27,4 +27,11 @@ $context['post'] = $post;
 if (is_front_page()) {
     $context['home'] = prepareHomepageFields();
 }
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+
+if (is_page(24) || is_page(25) || is_page(26)) {
+    $context['base'] = prepareBaseFields();
+    Timber::render('page-base.twig', $context);
+} else {
+    Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+
+}

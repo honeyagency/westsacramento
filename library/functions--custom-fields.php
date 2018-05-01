@@ -117,3 +117,91 @@ function prepareOptions()
     );
     return $section;
 }
+
+function prepareBaseFields()
+{
+    $headerImageId = get_field('field_5ae7570df0e78');
+    $headerImage   = null;
+    if (!empty($headerImageId)) {
+        $headerImage = new TimberImage($headerImageId);
+    }
+    $previous = array(
+        'link'  => get_field('field_5ae75751f0e7c'),
+        'color' => get_field('field_5ae8e36889802'),
+    );
+    $next = array(
+        'link'  => get_field('field_5ae75760f0e7d'),
+        'color' => get_field('field_5ae8e38c89803'),
+    );
+    $header = array(
+        'image'       => $headerImage,
+        'icon'        => get_field('field_5ae8d89bacab3'),
+        'color'       => get_field('field_5ae8e3188ae7f'),
+        'title'       => get_field('field_5ae75724f0e79'),
+        'subtitle'    => get_field('field_5ae7572df0e7a'),
+        'description' => get_field('field_5ae75739f0e7b'),
+        'prev'        => $previous,
+        'next'        => $next,
+    );
+    if (have_rows('field_5ae757def0e82')) {
+        $steps = array();
+        while (have_rows('field_5ae757def0e82')) {
+            the_row();
+            $steps[] = array(
+                'title' => get_sub_field('field_5ae757f3f0e83'),
+                'text'  => get_sub_field('field_5ae757faf0e84'),
+            );
+        }
+    } else {
+        $steps = null;
+    }
+
+    $started = array(
+        'title' => get_field('field_5ae7579ef0e81'),
+        'steps' => $steps,
+    );
+    $storyArray = get_field('field_5ae7581ff0e86');
+    $stories    = array();
+    if (!empty($storyArray)) {
+        foreach ($storyArray as $story) {
+            $imageId = get_post_thumbnail_id($story);
+            $image   = null;
+            if (!empty($imageId)) {
+                $image = new TimberImage($imageId);
+            }
+            $stories[] = array(
+                'image'       => $image,
+                'title'       => get_the_title($story),
+                'achievement' => get_field('field_5ae75b28bb14a', $story),
+                'description' => get_field('field_5ae75b96bb14c', $story),
+                'link'        => get_the_permalink($story),
+            );
+        }
+    }
+
+    if (have_rows('field_5ae7568e7z14x')) {
+        $item = array();
+        while (have_rows('field_5ae7568e7z14x')) {
+            the_row();
+            $item[] = array(
+                'number' => get_sub_field('field_5ae7569d7z15x'),
+                'text'   => get_sub_field('field_5ae756ac7z16x'),
+            );
+        }
+    } else {
+        $item = null;
+    }
+    $community = array(
+        'title' => get_field('field_5ae756817z13x'),
+        'item'  => $item,
+        'link'  => get_field('field_5ae756c07z17x'),
+    );
+    $base = array(
+        'header'    => $header,
+        'content'   => get_field('field_5ae75773f0e7f'),
+        'started'   => $started,
+        'stories'   => $stories,
+        'community' => $community,
+    );
+    return $base;
+}

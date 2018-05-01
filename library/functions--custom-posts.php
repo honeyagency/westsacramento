@@ -88,6 +88,12 @@ function getSinglePost($posttype = null)
             'publication' => get_field('field_5ae7a0762bfa3'),
         );
         $singlePostArray['news'] = $news;
+    } elseif ($posttype == 'success_story') {
+        $success = array(
+            'achievement' => get_field('field_5ae75b28bb14a'),
+            'description' => get_field('field_5ae75b96bb14c'),
+        );
+        $singlePostArray['story'] = $success;
     }
 
     // Restores original Post Data

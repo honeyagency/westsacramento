@@ -1,8 +1,8 @@
-<footer class="flex flex--wrap justify--between spacing--gutter align--items-center spacing--vert-2">
+<footer class="flex flex--wrap justify--between spacing--gutter align--items-stretch spacing--vert-2">
 	<div class="medium--hide grid--sixth"><i class="icon-logo-nobg" data-grunticon-embed></i></div>
 	{% for nav in options.footer.navigation %}
 		{% include 'components/blocks/block--footer-nav.twig' %}
 	{% endfor %}
-	<img src="{{options.footer.logo}}" alt="{{options.footer.logo.alt}}" width="75" />
+	
 	{# Copyright {{"now"|date('Y')}} #}
 </footer>

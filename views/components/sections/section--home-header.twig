@@ -1,9 +1,9 @@
-<section class="section--home-header">
-	<div class="home--header-image">
+<section class="section--home-header" style="background-image:url('{{home.header.image|resize(1080,577)}}')">
+	<div class="home--header-image medium--hide">
 		<img src="{{home.header.image|resize(300,160)}}" data-original="{{home.header.image|resize(1080,577)}}" alt="{{home.header.image.caption}}" data-original-set="{{home.header.image|resize(1138, 753)}} 640w, {{home.header.image|resize(750, 400)}} 750w, {{home.header.image|resize(1080,577)}} 1080w, {{home.header.image|resize(1920,1026)}} 1920w, {{home.header.image|resize(2880,1540)}} 2880w" sizes="100vw">
 	</div>
-	<section class="home--header-content flex flex--wrap justify--between align--items-center spacing--gutter">
-		<div class="grid--md-two-fifths block--logo"><i class="icon-logo" data-grunticon-embed></i></div>
-		<div class="grid--one grid--md-three-fifths"><h1 class="color--white transform--no font--thin h2">{{home.header.title}}</h1></div>
+	<section class="home--header-content flex flex--wrap justify--between align--items-center">
+		<div class="grid--md-two-fifths block--logo"><i class="icon-logo-nobg" data-grunticon-embed></i></div>
+		<div class="block--home-title margin--center grid--md-three-fifths spacing--vert-3 spacing--gutter-mob"><h1 class="color--white transform--no font--thin h2">{{home.header.title}}</h1></div>
 	</section>
 </section>

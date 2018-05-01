@@ -1,0 +1,11 @@
+<section class="section--base-started border--{{base.header.color}} spacing--gutter spacing--vert-2 spacing--dsk-vert-3">
+	<h2>{{base.started.title}}</h2>
+	<div class="flex flex--wrap justify--between align--items-baseline">
+		{% for step in base.started.steps %}
+			<div class="grid--one grid--sm-third">
+				<h5 class="h1 mar--no">{{step.title}}</h5>
+				<div class="font--small">{{step.text}}</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

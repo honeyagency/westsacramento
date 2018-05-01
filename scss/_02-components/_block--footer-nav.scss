@@ -2,13 +2,15 @@
     margin: 0;
     border-left: 2px solid $gray;
     margin-bottom: 1em;
-    flex-grow: 1;
+
+    // flex-grow: 1;
 
     li {
         list-style-type: none;
         margin: 0;
-        line-height: .9;
-        margin-bottom: .5em;
+
+        // line-height: .9;
+        // margin-bottom: .5em;
 
         &:last-of-type {
             margin-bottom: 0;

@@ -1,0 +1,95 @@
+.section--base-stories {
+    .bg {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include media($max-sm) {
+            min-height: 250px;
+        }
+    }
+
+    .slide {
+        width: 100vw;
+
+        // height: 100%;
+   
+    }
+
+    .bg--blue,
+    .bg--red {
+        .inherit,
+        .button {
+            color: $yellow;
+        }
+    }
+
+    .bg--yellow {
+        .inherit,
+        .button {
+            color: $blue;
+        }
+    }
+
+    .flickity-page-dots {
+        position: absolute;
+        transform: rotate(90deg);
+        top: 1em;
+        right: 0;
+
+        @include media($screen-sm) {
+            top: 1.7em;
+            right: 1.7em;
+        }
+
+
+        width: auto;
+        bottom: unset;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        line-height: 1;
+
+        .dot {
+            opacity: 1;
+            background: transparent;
+            border: 1px solid transparent;
+            margin: 0 4px;
+            transition: border-color 0.2s $base-animation, background-color 0.2s $base-animation;
+
+            &.is-selected {
+                transition: border-color 0.2s $base-animation, background-color 0.2s $base-animation;
+            }
+        }
+    }
+
+    &.bg--blue,
+    &.bg--red {
+        .flickity-page-dots {
+            .dot {
+                border-color: $yellow;
+
+                &.is-selected {
+                    background-color: $yellow;
+                }
+            }
+        }
+    }
+
+    &.bg--yellow {
+        .flickity-page-dots {
+            .dot {
+                border-color: $blue;
+
+                &.is-selected {
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+
+    .flickity-viewport {
+        transition: height 0.2s $base-animation;
+    }
+}

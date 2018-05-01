@@ -5,7 +5,9 @@ body.home {
         width: 100%;
 
         .section--header-navigation {
-            background-color: transparent;
+            @include media($screen-sm) {
+                background-color: transparent;
+            }
         }
 
         @include media($screen-md) {
@@ -24,6 +26,9 @@ body.home {
 
 .section--home-header {
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     padding-bottom: 50px;
     padding-top: 95px;
 
@@ -39,6 +44,7 @@ body.home {
 
     @include media($screen-md) {
         padding-top: 180px;
+        background-image: none !important;
     }
 
 
@@ -71,35 +77,32 @@ body.home {
     z-index: 11;
 
     h1 {
-        @include media($screen-xs) {}
-
-        @include media($screen-sm) {}
-
         @include media($screen-md) {
-            font-size: 2em;
+            font-size: 1.5em;
         }
 
 
         @include media($screen-lg) {
-            font-size: 2.2em;
+            font-size: 1.9em;
         }
 
 
-        @include media($screen-xl) {}
+        @include media($screen-xl) {
+            font-size: 2.2em;
+        }
     }
 
-    .icon-logo {
+    .icon-logo-nobg {
+        display: table;
+        height: 80%;
+        width: 80%;
+        margin: 0 auto;
+
         svg {
             path {
-                &:first-of-type {
-                    display: none;
-                }
-
-                &:last-of-type {
-                    fill: $yellow;
-                    width: 100%;
-                    height: 100%;
-                }
+                fill: $yellow;
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -113,5 +116,19 @@ body.home {
     .home--header-content {
         z-index: 12;
         position: relative;
+
+        @include media($screen-md) {
+            padding-right: 3em * $grid;
+            padding-left: 3em * $grid;
+        }
+    }
+
+    .block--home-title {
+        @include media($screen-sm) {
+            @include media($max-md) {
+                width: calc(100% - 200px);
+                flex-basis: calc(100% - 200px);
+            }
+        }
     }
 }

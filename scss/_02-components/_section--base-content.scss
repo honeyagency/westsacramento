@@ -1,0 +1,138 @@
+.section--base-content {
+    .block--base-title {
+        @include media($screen-sm) {
+            top: -1em;
+            margin-bottom: -1em;
+        }
+
+
+        position: relative;
+
+        .titlewrap {
+            i {
+                display: inline-block;
+                top: 1.7em;
+                right: 1.7em;
+                width: 60px;
+                height: 60px;
+                position: absolute;
+            }
+        }
+
+        &.bg--blue, &.bg--red {
+            .inherit {
+                color: $yellow;
+            }
+
+            i {
+                svg {
+                    path {
+                        fill: $yellow;
+                    }
+                }
+            }
+        }
+
+        &.bg--yellow {
+            .inherit {
+                color: $blue;
+            }
+
+            i {
+                svg {
+                    path {
+                        fill: $blue;
+                    }
+                }
+            }
+        }
+
+        h5 {
+            @include media($screen-xs) {}
+
+
+            @include media($screen-sm) {
+                font-size: 1.6em;
+            }
+
+
+            @include media($screen-md) {
+                font-size: 1.9em;
+            }
+
+
+            @include media($screen-lg) {
+                font-size: 2.5em;
+            }
+
+
+            @include media($screen-xl) {}
+        }
+
+        .prevnext {
+            i {
+                display: inline-table;
+                width: 10px;
+                height: 10px;
+                margin-right: .5em;
+
+                &.right {
+                    margin-right: 0;
+                    margin-left: .5em;
+                    transform: rotate(180deg);
+                }
+            }
+
+            .bg--blue, .bg--red {
+                .button {
+                    color: $yellow;
+                }
+
+                i {
+                    svg {
+                        path {
+                            fill: $yellow;
+                        }
+                    }
+                }
+            }
+
+            .bg--yellow {
+                .button {
+                    color: $blue;
+                }
+
+                i {
+                    svg {
+                        path {
+                            fill: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        h2, h3, h4, h5 {
+            @extend .font--abel;
+
+            text-transform: uppercase;
+            font-weight: 100;
+        }
+
+        h2 {
+            margin-bottom: 1em;
+            letter-spacing: 1px;
+            font-size: 2rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        font-size: 1.1rem;
+        -webkit-font-smoothing: antialiased;
+    }
+}

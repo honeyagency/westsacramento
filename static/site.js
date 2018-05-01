@@ -5,6 +5,15 @@ jQuery(document).ready(function($) {
         throttle: 30,
         show_while_loading: false,
     });
+    if ($('.section--base-stories').length > 0) {
+        $('.section--base-stories').flickity({
+            // options
+            cellAlign: 'left',
+            adaptiveHeight: true,
+            prevNextButtons: false,
+            pageDots: true
+        });
+    }
     if (window.matchMedia('(max-width: 768px)').matches) {
         var mob = true;
     } else {

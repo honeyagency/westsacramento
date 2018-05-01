@@ -8,15 +8,9 @@
     }
 
 
-    @include media($screen-sm) {
-        width: calc(100% - 120px);
-        flex-basis: calc(100% - 120px);
-    }
-
-
     @include media($screen-md) {
-        width: calc(100% - 180px);
-        flex-basis: calc(100% - 180px);
+        width: calc(100% - 150px);
+        flex-basis: calc(100% - 150px);
     }
 
 
@@ -31,6 +25,50 @@
         flex-basis: calc(100% - 250px);
     }
 
+
+    > ul {
+        > li {
+            @include media($screen-xs) {}
+
+
+            @include media($screen-sm) {
+                font-size: .7em;
+
+                > a {
+                    font-weight: 400;
+                }
+            }
+
+
+            @include media($screen-smd) {
+                font-size: .75em;
+            }
+
+
+            @include media($screen-md) {
+                font-size: .8em;
+
+                > a {
+                    letter-spacing: .5px;
+                }
+            }
+
+
+            @include media($screen-lg) {
+                font-size: .9em;
+
+                > a {
+                    letter-spacing: 1px;
+                    font-weight: 600;
+                }
+            }
+
+
+            @include media($screen-xl) {
+                font-size: $base-font-size;
+            }
+        }
+    }
 
     ul,
     li {

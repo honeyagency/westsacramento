@@ -1,0 +1,21 @@
+<header class="block--base-title grid--one grid--md-two-fifths grid--lg-third bg--{{base.header.color}}">
+	<div class="titlewrap spacing--horiz-3 spacing--vert-3">
+		<i class="icon-{{base.header.icon}}" data-grunticon-embed></i>
+		<h4 class="inherit">{{base.header.title}}</h4>
+		<h5 class="h1 transform--no font--thin short inherit letter--0">{{base.header.subtitle}}</h5>
+		<div class="font--abel short font--large inherit">{{base.header.description}}</div>
+	</div>
+	<div class="prevnext flex flex--wrap justify--between text--center">
+		{% if base.header.prev.link.url %}
+			{# theres a previous link #}
+			<div class="bg--{{base.header.prev.color}} spacing--vert-1 {% if base.header.next.link.url %}grid--half{% else %}grid--one{% endif %} nog">
+			<a href="{{base.header.prev.link.url}}" target="{{base.header.prev.link.target}}" title="{{base.header.prev.link.title}}" class="button center"><i class="icon-arrow left" data-grunticon-embed></i>{{base.header.prev.link.title}}</a>
+		</div>
+	{% endif %}
+	{% if base.header.next.link.url %}
+		<div class="bg--{{base.header.next.color}} spacing--vert-1 {% if base.header.prev.link.url %}grid--half{% else %}grid--one{% endif %} nog">
+		<a href="{{base.header.next.link.url}}" target="{{base.header.next.link.target}}" title="{{base.header.next.link.title}}" class="button center">{{base.header.next.link.title}}<i class="icon-arrow right" data-grunticon-embed></i></a>
+	</div>
+{% endif %}
+</div>
+</header>
