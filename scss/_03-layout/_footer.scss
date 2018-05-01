@@ -1,1 +1,12 @@
-footer{}
+footer {
+    .icon-logo-nobg {
+    	display: inline-block;
+    	width: 135px;
+    	height: 135px;
+        svg {
+            path {
+                fill: $black;
+            }
+        }
+    }
+}

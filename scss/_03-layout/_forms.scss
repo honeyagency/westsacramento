@@ -1,15 +1,15 @@
-$formbordercolor: black;
-$formtextcolor: black;
-$formplaceholdercolor: blue;
+$formbordercolor: transparent;
+$formtextcolor: $black;
+$formplaceholdercolor: $black;
 
-$forminvalidbackground: red;
-$forminvalidcolor: white;
+$forminvalidbackground: $red;
+$forminvalidcolor: $white;
 
-$formsuccessbackground: orange;
-$formsuccesstextcolor: white;
+$formsuccessbackground: $yellow;
+$formsuccesstextcolor: $black;
 
-$formbuttonbackground: orange;
-$formbuttoncolor: white;
+$formbuttonbackground: transparent;
+$formbuttoncolor: $black;
 
 fieldset {
     background-color: transparent;
@@ -32,18 +32,16 @@ input,
 select,
 textarea,
 #{$all-text-inputs},[type="submit"] {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: $base-sans-font;
     color: $formtextcolor;
     appearance: none;
-
-    border: 1px solid $formbordercolor;
+    border: none;
     border-radius: 0 !important;
     box-shadow: none;
     box-sizing: border-box;
-    padding: 12px 14px;
+    padding: 0.9em 1.5em;
     transition: color .2s ease-in-out;
-    letter-spacing: 1px;
 
     &:focus {
         transition: color .2s ease-in-out;
@@ -54,11 +52,13 @@ textarea,
     }
 
     &::-webkit-input-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
         color: $formplaceholdercolor;
     }
 
     &:-moz-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
 
         /* Firefox 18- */
@@ -66,6 +66,7 @@ textarea,
     }
 
     &::-moz-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
 
         /* Firefox 19+ */
@@ -73,6 +74,7 @@ textarea,
     }
 
     &:-ms-input-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
         color: $formplaceholdercolor;
     }
@@ -128,6 +130,10 @@ select {
     }
 }
 
+#{$all-text-inputs} {
+    flex-grow: 1;
+}
+
 span.wpcf7-not-valid-tip {
     color: $forminvalidcolor;
     background-color: $forminvalidbackground;
@@ -175,6 +181,7 @@ div.wpcf7-mail-sent-ok {
 button, [type="submit"] {
     background-color: $formbuttonbackground;
     color: $formbuttoncolor;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
+    border: 2px solid $formbuttoncolor;
     text-transform: uppercase;
 }

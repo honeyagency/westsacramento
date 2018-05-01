@@ -1,0 +1,11 @@
+<ul class="block--footer-nav spacing--horiz-half">
+	{% if loop.index > 2  %}{% set color = 'color--gray-light' %}{% set size = 'font--smaller' %}{% else %}{% set color = 'color--black' %}{% set size = 'font--small' %}{% endif %}
+	{% for item in nav %}
+		{% set nourl = site.url ~ '/' %}
+		{% if item.url == nourl or item.url == site.url %}
+			<li><span class="{{color}} {{size}}">{{item.title}}</span></li>
+		{% else %}
+			<li><a class="{{color}} {{size}}" href="{{item.url}}" target="{{item.target}}" title="{{item.title}}">{{item.title}}</a></li>
+		{% endif %}
+	{% endfor %}
+</ul>

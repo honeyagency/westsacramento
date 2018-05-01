@@ -83,6 +83,12 @@ function getSinglePost($posttype = null)
         'image'      => $attachedimage,
         'link'       => get_permalink(),
     );
+    if ($posttype == 'news') {
+        $news = array(
+            'publication' => get_field('field_5ae7a0762bfa3'),
+        );
+        $singlePostArray['news'] = $news;
+    }
 
     // Restores original Post Data
     wp_reset_postdata();

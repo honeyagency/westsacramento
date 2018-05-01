@@ -32,6 +32,10 @@ p.font--large {
     font-size: .85em;
 }
 
+.font--smaller {
+    font-size: .75em;
+}
+
 .font--tiny {
     font-size: .65em;
 }
@@ -54,6 +58,10 @@ p.font--large {
 
 .font--italic {
     font-style: italic;
+}
+
+.font--one {
+    font-size: $base-font-size !important;
 }
 
 .font--normal {

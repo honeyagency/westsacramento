@@ -1,11 +1,22 @@
-<section class="section--footer-news bg--cream spacing--gutter spacing--vert-2 spacing--dsk-vert-5 flex flex--wrap justify--between">
-	<div class="grid--one grid--sm-half">
-		<h4 class=" text--uppercase font--bold">{{options.footer.news}}</h4>
-		<hr class="small text--left margin--horiz-0">
+<section class="section--footer-news bg--cream spacing--gutter spacing--vert-2 spacing--dsk-vert-5 flex flex--wrap justify--between align--items-baseline">
+	<div class="grid--one"><h4 class=" text--uppercase font--bold">{{options.footer.news.title}}</h4>
+	<hr class="small text--left margin--horiz-0"></div>
+	<div class="grid--one grid--md-half">
+		
 		<div class="flex flex--wrap flex--double justify--between ">
-			{% for news in options.footer.newsposts %}
+			{% for news in options.footer.news.posts %}
 				{% include 'tease-news.twig' %}
 			{% endfor %}
 		</div>
+	</div>
+	<div class="block--social grid--one grid--md-two-fifths">
+		<div>
+			{% if options.options.email.title %}<h5 class="transform--no font--standard font--one">{{options.options.email.title}}</h5>{% endif %}
+			{% if options.options.email.embed %}<div class="margin--top-1 margin--bot-2">{{options.options.email.embed}}</div>{% endif %}
+		</div>
+		{% if options.options.social.linkedin.url %}<a href="{{options.options.social.linkedin.url}}" target="{{options.options.social.linkedin.target}}" title="{{options.options.social.linkedin.title}}" class=""><i class="icon-social--linkedin"></i></a>{% endif %}
+		{% if options.options.social.facebook.url %}<a href="{{options.options.social.facebook.url}}" target="{{options.options.social.facebook.target}}" title="{{options.options.social.facebook.title}}" class=""><i class="icon-social--facebook"></i></a>{% endif %}
+		{% if options.options.social.twitter.url %}<a href="{{options.options.social.twitter.url}}" target="{{options.options.social.twitter.target}}" title="{{options.options.social.twitter.title}}" class=""><i class="icon-social--twitter"></i></a>{% endif %}
+		{% if options.options.social.instagram.url %}<a href="{{options.options.social.instagram.url}}" target="{{options.options.social.instagram.target}}" title="{{options.options.social.instagram.title}}" class=""><i class="icon-social--instagram"></i></a>{% endif %}
 	</div>
 </section>

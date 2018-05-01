@@ -6,7 +6,17 @@
 
 .icon-base--3 { background-image: url('app/icons/base--3.png'); background-repeat: no-repeat; }
 
+.icon-logo-nobg { background-image: url('app/icons/logo-nobg.png'); background-repeat: no-repeat; }
+
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }
 
 .icon-search { background-image: url('app/icons/search.png'); background-repeat: no-repeat; }
+
+.icon-social--facebook { background-image: url('app/icons/social--facebook.png'); background-repeat: no-repeat; }
+
+.icon-social--instagram { background-image: url('app/icons/social--instagram.png'); background-repeat: no-repeat; }
+
+.icon-social--linkedin { background-image: url('app/icons/social--linkedin.png'); background-repeat: no-repeat; }
+
+.icon-social--twitter { background-image: url('app/icons/social--twitter.png'); background-repeat: no-repeat; }
 

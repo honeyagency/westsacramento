@@ -67,13 +67,53 @@ function prepareHomepageFields()
 }
 function prepareOptions()
 {
-    $footer = array(
-        'news'      => get_field('field_5ae79f3094e44', 'options'),
-        'newsposts' => getCustomPosts('news', 2, 'featured', 'date', null, null),
+    if (have_rows('field_5ae8a87cb670a', 'options')) {
+        $navs = array();
+        while (have_rows('field_5ae8a87cb670a', 'options')) {
+            the_row();
+            if (have_rows('field_5ae8a89eb670b', 'options')) {
+                $links = array();
+                while (have_rows('field_5ae8a89eb670b', 'options')) {
+                    the_row();
+                    $links[] = get_sub_field('field_5ae8a8adb670c');
+                }
+                $navs[] = $links;
+            }
+
+        }
+    }
+    $news = array(
+        'title' => get_field('field_5ae79f3094e44', 'options'),
+        'posts' => getCustomPosts('news', 2, 'featured', 'date', null, null),
     );
-    $options = array();
+    $logoImageId = get_field('field_5ae8a86ab6708', 'options');
+    $logoImage   = null;
+    if (!empty($logoImageId)) {
+        $logoImage = new TimberImage($logoImageId);
+    }
+
+    $footer = array(
+        'news'       => $news,
+        'navigation' => $navs,
+        'logo'       => $logoImage,
+    );
+    $email = array(
+        'title' => get_field('field_5ae89fb8069e3', 'options'),
+        'embed' => get_field('field_5ae89fc1069e4', 'options'),
+    );
+    $social = array(
+        'linkedin'  => get_field('field_5ae89fd4069e7', 'options'),
+        'facebook'  => get_field('field_5ae89fce069e6', 'options'),
+        'twitter'   => get_field('field_5ae89fdf069e8', 'options'),
+        'instagram' => get_field('field_5ae89fe4069e9', 'options'),
+    );
+    $options = array(
+        'email'  => $email,
+        'social' => $social,
+    );
     $section = array(
         'footer'  => $footer,
-        'options' => $options);
+        'options' => $options,
+    );
     return $section;
 }
