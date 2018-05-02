@@ -1,0 +1,34 @@
+.section--title-header {
+    .titlewrap {
+        padding-top: 5em;
+        padding-bottom: 5em;
+
+        @include media($screen-sm) {
+            padding-top: 10em;
+            padding-bottom: 10em;
+        }
+
+
+        h5 {
+            @include media($screen-xs) {}
+
+
+            @include media($screen-sm) {
+                font-size: 1.6em;
+            }
+
+
+            @include media($screen-md) {
+                font-size: 1.9em;
+            }
+
+
+            @include media($screen-lg) {
+                font-size: 2.5em;
+            }
+
+
+            @include media($screen-xl) {}
+        }
+    }
+}

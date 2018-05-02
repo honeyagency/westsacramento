@@ -14,6 +14,15 @@ jQuery(document).ready(function($) {
             pageDots: true
         });
     }
+    if ($('.section--success-stories').length > 0) {
+        $('.section--success-stories').flickity({
+            // options
+            cellAlign: 'left',
+            adaptiveHeight: true,
+            prevNextButtons: false,
+            pageDots: true
+        });
+    }
     if (window.matchMedia('(max-width: 768px)').matches) {
         var mob = true;
     } else {

@@ -258,3 +258,62 @@ function prepareGetInvolvedFields()
     );
     return $section;
 }
+function prepareCommunitySuccess()
+{
+
+    $header = array(
+        'title'    => get_field('field_5ae9f249b632a'),
+        'subtitle' => get_field('field_5ae9f25fb632b'),
+        'content'  => get_field('field_5ae9f26ab632c'),
+    );
+    $steps = array();
+
+    if (have_rows('field_5ae9f27bb632e')) {
+        $steps = array();
+        while (have_rows('field_5ae9f27bb632e')) {
+            the_row();
+            if (have_rows('field_5ae9f2beb6331')) {
+                $data = array();
+                while (have_rows('field_5ae9f2beb6331')) {
+                    the_row();
+                    $data[] = array(
+                        'number' => get_sub_field('field_5ae9f2cbb6332'),
+                        'text'   => get_sub_field('field_5ae9f2d1b6333'),
+                    );
+                }
+
+            }
+            $steps[] = array(
+                'icon'  => get_sub_field('field_5ae9f28db632f'),
+                'color' => get_sub_field('field_5ae9f2a4b6330'),
+                'title' => get_sub_field('field_5ae9f4a30a61e'),
+                'data'  => $data,
+            );
+        }
+    }
+    $storyArray = get_field('field_5ae9f359aa759');
+    $stories    = array();
+    if (!empty($storyArray)) {
+        foreach ($storyArray as $story) {
+            $imageId = get_post_thumbnail_id($story);
+            $image   = null;
+            if (!empty($imageId)) {
+                $image = new TimberImage($imageId);
+            }
+            $stories[] = array(
+                'image'       => $image,
+                'title'       => get_the_title($story),
+                'achievement' => get_field('field_5ae75b28bb14a', $story),
+                'description' => get_field('field_5ae75b96bb14c', $story),
+                'link'        => get_the_permalink($story),
+            );
+        }
+    }
+
+    $section = array(
+        'header'  => $header,
+        'steps'   => $steps,
+        'stories' => $stories,
+    );
+    return $section;
+}
