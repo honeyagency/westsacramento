@@ -1,10 +1,24 @@
 {% extends "base.twig" %}
 {% block content %}
-	
-	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="article-content">
-			<h1 class="article-h1">{{post.title}}</h1>
-			{{post.content}}
-		</section>
-	</article>
+	<section class=" section--base-header section--title-header block--base-title flex flex--wrap justify--start align--items-stretch">
+		<div class="grid--one grid--md-two-fifths grid--lg-third nog bg--cream">
+			<div class="titlewrap spacing--horiz-3">
+				<h1 class="h1 transform--no font--thin short inherit letter--0">{{post.title}}</h1>
+			</div>
+		</div>
+		<div class="content grid--one grid--md-three-fifths grid--lg-two-thirds nog">
+			{% if post.get_thumbnail %}
+				<img src="{{post.thumbnail.src}}" alt="">
+			{% endif %}
+		</div>
+	</section>
+	<section class="flex flex--wrap justify--between align--items-start spacing--vert-3 ">
+		<div class="grid--one grid--md-two-fifths grid--lg-third nog spacing--gutter">
+			{% include 'components/blocks/block--signup.twig' %}
+		</div>
+		<div class=" content grid--one grid--md-three-fifths grid--lg-two-thirds nog spacing--gutter">
+		{{post.content}}
+	</div>
+	</section>
+
 {% endblock %}
