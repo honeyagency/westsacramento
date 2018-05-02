@@ -12,13 +12,14 @@
 			{% endif %}
 		</div>
 	</section>
-	<section class="flex flex--wrap justify--between align--items-start spacing--vert-3 ">
-		<div class="grid--one grid--md-two-fifths grid--lg-third nog spacing--gutter">
-			{% include 'components/blocks/block--signup.twig' %}
-		</div>
-		<div class=" content grid--one grid--md-three-fifths grid--lg-two-thirds nog spacing--gutter">
+	<section class="dsk--flex flex--wrap justify--between align--items-start spacing--vert-3 ">
+		<div class=" content grid--one grid--md-three-fifths grid--lg-two-thirds nog spacing--gutter order--2">
 		{{post.content}}
 	</div>
+		<div class="grid--one grid--md-two-fifths grid--lg-third nog spacing--gutter order--1">
+			{% include 'components/blocks/block--signup.twig' %}
+		</div>
+		
 	</section>
 
 {% endblock %}
