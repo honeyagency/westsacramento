@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+{% block content %}
+	{% if post.thumbnail.src %}
+	{% include 'components/sections/section--get-involved-header.twig' %}
+{% endif %}
+	<article class="section--get-involved-wrap dsk--flex flex--wrap justify--start align--items-start">
+		{% include 'components/sections/section--get-involved-content.twig' %}
+		{% include 'components/blocks/block--get-involved-aside.twig' %}
+	</article>
+{% endblock %}

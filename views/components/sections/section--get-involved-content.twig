@@ -1,0 +1,18 @@
+<section class="section--get-involved-content grid--one grid--sm-three-fifths grid--md-half spacing--vert-3 order--2">
+	<div class="spacing--gutter content spacing--vert-2">
+		<h2 class=" margin--bot-1">{{involved.content.title}}</h2>
+		<p>{{involved.content.content}}</p>
+	</div>
+	{% for base in involved.content.bases %}
+		<div class="block--involved-base color--{{base.color}} margin--bot-4">
+			
+			<h3 class=" h5 font--bold spacing--gutter color--{{base.color}}">{{base.title}}<br>{{base.subtitle}}<i class="icon-{{base.class}}" data-grunticon-embed></i></h3>
+			<hr class="{{base.color}}">
+			<div class="color--black spacing--gutter font--small ">
+				<p class="spacing--vert-2">{{base.content}}</p>
+				<a href="{{base.link.url}}" class="button color--black inline-block font--small" target="{{base.link.target}}" title="{{base.link.title}}">{{base.link.title}}</a>
+			</div>
+			
+		</div>
+	{% endfor %}
+</section>

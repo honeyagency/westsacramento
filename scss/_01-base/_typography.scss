@@ -61,7 +61,6 @@ h5, .h5 {
 
 h6, .h6 {
     font-size: $h6;
-
     margin-bottom: 0.5em;
 }
 
@@ -194,4 +193,27 @@ hr {
         border-bottom: 5px solid;
         width: 45px;
     }
+}
+
+.content {
+    h2, h3, h4, h5 {
+        @extend .font--abel;
+
+        text-transform: uppercase;
+        font-weight: 100;
+    }
+
+    h2 {
+        margin-bottom: 1em;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    font-size: 1.1rem;
+    -webkit-font-smoothing: antialiased;
 }

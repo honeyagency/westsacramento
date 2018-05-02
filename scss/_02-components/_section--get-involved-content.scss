@@ -1,0 +1,19 @@
+.section--get-involved-content {
+    hr {
+        border-bottom: 15px solid;
+    }
+
+    h3 {
+        position: relative;
+
+        i {
+            display: inline-block;
+            width: 50px;
+            height: 41px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

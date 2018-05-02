@@ -1,0 +1,12 @@
+<aside class="grid--one grid--md-two-fifths grid--lg-third order--1 spacing--gutter spacing--vert-4">
+	<div class="grid--one"><h4 class=" text--uppercase font--bold">{{involved.sidebar.title}}</h4>
+	<hr class="small text--left margin--horiz-0"></div>
+	{# {{involved|print_r}} #}
+	{% for item in involved.sidebar.item %}
+		{{item|print_r}}
+		<div>
+			<div class="font--large font--abel">{{item.title}}</div>
+			<a class="color--blue text--uppercase font--small block" href="{{item.link.url}}" target="{{item.link.target}}" title="{{item.link.title}}">{{item.link.title}}</a>
+		</div>
+	{% endfor %}
+</aside>

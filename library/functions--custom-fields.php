@@ -205,3 +205,55 @@ function prepareBaseFields()
     );
     return $base;
 }
+
+function prepareGetInvolvedFields()
+{
+
+    if (have_rows('field_5ae90339c5ba5')) {
+        $base = array();
+        while (have_rows('field_5ae90339c5ba5')) {
+            the_row();
+            $base[] = array(
+                'color'   => get_sub_field('field_5ae90354c5ba6'),
+                'class'   => get_sub_field('field_5ae9037dc5ba8'),
+                'title'   => get_sub_field('field_5ae90371c5ba7'),
+                'subtitle'   => get_sub_field('field_5ae90805459f7'),
+                'content' => get_sub_field('field_5ae90399c5baa'),
+                'link'    => get_sub_field('field_5ae903a7c5bab'),
+            );
+        }
+    } else {
+        $base = null;
+    }
+    if (have_rows('field_5ae90339c5ba5')) {
+        $item = array();
+        while (have_rows('field_5ae90339c5ba5')) {
+            the_row();
+            $item[] = array(
+                'title' => get_sub_field('field_5ae90412bd1b0'),
+                'link'  => get_sub_field('field_5ae9041dbd1b1'),
+            );
+        }
+    } else {
+        $item = null;
+    }
+    $content = array(
+        'title'   => get_field('field_5ae9031ec5ba3'),
+        'content' => get_field('field_5ae9032dc5ba4'),
+        'bases'   => $base,
+    );
+    $connected = array(
+        'title' => get_field('field_5ae904f34cdcf'),
+        'item'  => get_field('field_5ae904fe4cdd0'),
+    );
+    $aside = array(
+        'title'     => get_field('field_5ae903eebd1ae'),
+        'item'      => $item,
+        'connected' => $connected,
+    );
+    $section = array(
+        'content' => $content,
+        'sidebar' => $aside,
+    );
+    return $section;
+}
