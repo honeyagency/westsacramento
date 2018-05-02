@@ -1,0 +1,51 @@
+.block--translate {
+    .goog-te-gadget {
+        font-size: .65em;
+        color: $yellow;
+        color: transparent;
+        font-family: $base-sans-font;
+
+        div {
+            margin-bottom: -20px;
+            margin-top: 4px;
+        }
+    }
+
+    .goog-logo-link {
+        display: none !important;
+    }
+
+    .goog-te-combo {
+        -webkit-appearance: none;
+        appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+        font-family: $base-sans-font;
+        display: block;
+        color: $yellow;
+        padding: 0;
+        margin: 0 !important;
+    }
+}
+
+@include media($screen-sm) {
+    .section--language {
+        position: relative;
+        display: block;
+
+        .nav-drop {
+            max-width: 150px !important;
+
+            &.open {
+                @include accelerate;
+
+                pointer-events: all;
+                transform: translateX(50%);
+                z-index: 9999;
+                opacity: 1;
+                transition: opacity 0.2s $base-animation, transform 0.3s $base-animation;
+                will-change: opacity, transform;
+            }
+        }
+    }
+}

@@ -39,6 +39,7 @@ function jquery_enqueue()
     wp_register_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
 }
 
+
 function localInstall()
 {
     if ('127.0.0.1' == $_SERVER["REMOTE_ADDR"]) {
@@ -66,7 +67,11 @@ function buscemi_scripts()
     wp_register_script('picturefill', get_template_directory_uri() . '/app/vendors/picturefill.min.js', null, false, true);
     wp_enqueue_script('picturefill');
 
-     wp_register_script('flickity', get_template_directory_uri() . '/app/vendors/flickity/flickity.min.js', null, false, true);
+    wp_register_script('translate', 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit', null, false, true);
+    wp_enqueue_script('translate');
+
+
+    wp_register_script('flickity', get_template_directory_uri() . '/app/vendors/flickity/flickity.min.js', null, false, true);
     wp_enqueue_script('flickity');
 
     wp_enqueue_style('flickity_style', get_template_directory_uri() . '/app/vendors/flickity/flickity.css', null, null, null);

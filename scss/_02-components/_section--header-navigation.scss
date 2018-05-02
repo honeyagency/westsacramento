@@ -196,4 +196,17 @@
             }
         }
     }
+
+}
+.langtext{
+    @include media($max-lg) {
+        span{
+            display: none;
+        }
+        &:before{
+            content: 'Lang' !important;
+            display: inline-block;
+
+        }
+    }
 }

@@ -1,3 +1,9 @@
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,ru',
+    }, 'google_translate_element');
+}
 jQuery(document).ready(function($) {
     var myLazyLoad = new LazyLoad({
         // example of options object -> see options section
@@ -23,6 +29,11 @@ jQuery(document).ready(function($) {
             pageDots: true
         });
     }
+    $('#trigger-translate').on('click touchstart', function(event) {
+        event.preventDefault();
+        $wrap = $(this).parent('.section--language').find('.block--translate');
+        $wrap.toggleClass('open');
+    });
     if (window.matchMedia('(max-width: 768px)').matches) {
         var mob = true;
     } else {
@@ -45,4 +56,5 @@ jQuery(document).ready(function($) {
             }
         });
     } else {}
+   
 });
