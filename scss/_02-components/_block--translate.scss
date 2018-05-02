@@ -49,3 +49,15 @@
         }
     }
 }
+
+
+.goog-te-banner-frame[style] {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+
+    .goog-te-banner {
+        background-image: none !important;
+        background-color: transparentize($blue, 0.2);
+    }
+}
