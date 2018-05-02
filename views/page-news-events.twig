@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block content %}
+	{% include 'components/sections/section--news-events-header.twig' %}
+	<section class="dsk--flex flex--wrap justify--start align--items-baseline ">
+		<div class="grid--one grid--md-three-fifths grid--lg-two-thirds spacing--vert-3 order--2 spacing--gutter">
+			{% if filtered %}
+				<div class="grid--one"><h4 class=" text--uppercase font--bold">{{filtered}}</h4>
+				<hr class="small text--left margin--horiz-0"></div>
+
+				{% if filtered == 'News' %}
+
+					{% include 'components/sections/section--news-feat.twig' %}
+				{% else %}
+					{% include 'components/sections/section--news-successstories.twig' %}
+				{% endif %}
+			{% else %}
+				<div class="grid--one"><h4 class=" text--uppercase font--bold">News</h4>
+				<hr class="small text--left margin--horiz-0"></div>
+				{% include 'components/sections/section--news-feat.twig' %}
+			{% endif %}
+		</div>
+		<div class="grid--one grid--md-two-fifths grid--lg-third order--1 spacing--gutter spacing--vert-2">
+		{% if filtered %}{% include 'components/blocks/block--signup.twig' %}{% else %}
+			<div class="grid--one"><h4 class=" text--uppercase font--bold">Upcoming Events</h4>
+			<hr class="small text--left margin--horiz-0"></div>
+			{% include 'components/sections/section--news-events.twig' %}
+		{% endif %}
+	</div>
+</section>
+{% endblock %}

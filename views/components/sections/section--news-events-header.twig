@@ -1,0 +1,29 @@
+<section class=" section--base-header section--title-header block--base-title flex flex--wrap justify--start align--items-baseline">
+	<div class="grid--one grid--md-two-fifths grid--lg-third bg--cream">
+		<div class="titlewrap spacing--horiz-3">
+			<h1 class="h1 transform--no font--thin short inherit letter--0">{{post.title}}</h1>
+		</div>
+	</div>
+	<div class="content grid--one grid--md-three-fifths grid--lg-two-thirds spacing--vert-3 spacing--gutter">
+		<div class="flex flex-wrap justify--start align--items-center margin--bot-half">
+			<div class="grid--fifth">
+				<strong class="text--uppercase font--medium">Filter By</strong>
+			</div>
+			<div>
+				{% if stories %}<span class="button color--white bg--blue">Home Run Successes</span>{% else %}<a href="?post=success_story" class="button color--black">Home Run Successes</a>{% endif %}
+				{% if filtered == 'News' %}<span class="button color--white bg--blue">News</span>{% else %}<a href="?post=news" class="button color--black">News</a>{% endif %}
+				{# <a href="?post=news&cat=press" class="button color--black">Press</a> #}
+			</div>
+		</div>
+	{# 	<div class="flex flex-wrap justify--start align--items-center ">
+			<div class="grid--fifth">
+				<strong class="text--uppercase font--medium">Categories</strong>
+			</div>
+			<div>
+				<a href="?post=success_story" class=" color--black">1st Base</a> |
+				<a href="?post=news" class=" color--black">2nd Base</a> |
+				<a href="?post=news&cat=press" class=" color--black">3rd Base</a>
+			</div>
+		</div> #}
+	</div>
+</section>

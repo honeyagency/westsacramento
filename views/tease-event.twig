@@ -1,0 +1,13 @@
+{% extends "tease.twig" %}
+{% block content %}
+	<article class="tease tease-{{event.post_type}}" id="tease-{{event.ID}}">
+		<div class="event--meta spacing--vert-1">
+			<time datetime="{{ event.event.date|date('Y-m-d')}}" class="font--bold">{{event.event.date|date}}</time><br>
+			<a href="{{event.event.publication.url}}" target="{{event.event.publication.target}}" title="{{event.event.publication.title}}" class="color--black text--uppercase font--small block">{{event.event.publication.title}}</a>
+		</div>
+		<h2 class="h3 font--abel font--thin"><a class="color--black" href="{{event.link}}">{{ event.title|length > 80 ? event.title|slice(0, 80) ~ '...' : event.title  }}</a></h2>
+		
+		<br><a class="color--blue text--uppercase font--small" href="{{event.link}}">Read More</a>
+	</article>
+	
+{% endblock %}

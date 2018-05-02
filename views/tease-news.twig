@@ -2,7 +2,8 @@
 {% block content %}
 	<article class="tease tease-{{news.post_type}}" id="tease-{{news.ID}}">
 		<div class="news--meta spacing--vert-1">
-		<time datetime="{{ news.post_date|date('Y-m-d')}}" class="font--bold">{{news.post_date|date}}</time><br>
+			{# {{news}} #}
+		<time datetime="{{ news.date|date('Y-m-d')}}" class="font--bold">{{news.date|date}}</time><br>
 		<a href="{{news.news.publication.url}}" target="{{news.news.publication.target}}" title="{{news.news.publication.title}}" class="color--black text--uppercase font--small block">{{news.news.publication.title}}</a>
 	</div>
 		<h2 class="h3 font--abel font--thin"><a class="color--black" href="{{news.link}}">{{ news.title|length > 80 ? news.title|slice(0, 80) ~ '...' : news.title  }}</a></h2>

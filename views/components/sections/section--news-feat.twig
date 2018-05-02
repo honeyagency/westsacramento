@@ -1,0 +1,8 @@
+<section class="section--news-feat">
+	{% for news in featurednews %}
+		{% include 'tease-news-archive-feat.twig' %}
+	{% endfor %}
+	{% for news in news %}
+		{% include 'tease-news.twig' %}
+	{% endfor %}
+</section>

@@ -1,0 +1,20 @@
+{% extends "tease.twig" %}
+{% block content %}
+	<article class="block--tease-story-archive-feat dsk--flex flex--wrap justify--between align--items-stretch tease margin--bot-2 tease-{{story.post_type}} bg--blue" id="tease-{{story.ID}}">
+		
+		{% if story.image %}
+			<div class="grid--one grid--sm-half nog bgimg order--2" style="background-image:url('{{story.image|resize(1200)}}')"></div>
+		{% endif %}
+		<div class="grid--one spacing--vert-2 spacing--dsk-vert-3 spacing--horiz-1 spacing--dsk-horiz-4 {% if story.image %} grid--sm-half nog order--1{% endif %}">
+		<div class="story--meta spacing--vert-2">
+
+			<div class="color--white text--uppercase font--small block">{{story.story.achievement}}</div>
+			<h2 class="transform--no font--abel font--thin margin--bot-"><a class="color--white" href="{{story.link}}">{{ story.title|length > 80 ? story.title|slice(0, 80) ~ '...' : story.title  }}</a></h2>
+			<div class="color--white font--small">{{story.story.description}}</div>
+		</div>
+
+		<a class="color--white button text--uppercase font--small" href="{{story.link}}">Read More</a>
+	</div>
+	
+</article>
+{% endblock %}

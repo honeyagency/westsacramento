@@ -24,8 +24,35 @@
 $context         = Timber::get_context();
 $post            = new TimberPost();
 $context['post'] = $post;
+
 if (is_front_page()) {
     $context['home'] = prepareHomepageFields();
+} elseif (is_page(8)) {
+
+    if (!empty($_GET["post"])) {
+        $type = $_GET["post"];
+        if ($type == 'news') {
+            $context['filtered'] = 'News';
+            $context['news']     = getCustomPosts('news', -1, null, 'date', null, null);
+        } elseif ($type == 'success_story') {
+            $context['filtered'] = 'Success Stories';
+            $context['stories']  = getCustomPosts('success_story', 5, null, 'date', null, null);
+        }
+
+    } else {
+        $context['events'] = getCustomPosts('event', 2, null, 'eventdate', null, null);
+
+        $feat    = getCustomPosts('news', 2, 'featured', 'date', null, null);
+        $exclude = array();
+        foreach ($feat as $newsId) {
+            $exclude[] = $newsId['id'];
+
+        }
+
+        $context['featurednews'] = $feat;
+
+        $context['news'] = getCustomPosts('news', 3, null, 'date', $exclude, null);
+    }
 }
 
 if (is_page(24) || is_page(25) || is_page(26)) {

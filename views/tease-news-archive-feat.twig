@@ -1,0 +1,19 @@
+{% extends "tease.twig" %}
+{% block content %}
+	<article class="block--tease-news-archive-feat dsk--flex flex--wrap justify--between align--items-stretch tease margin--bot-2 tease-{{news.post_type}} bg--blue" id="tease-{{news.ID}}">
+		
+		{% if news.image %}
+			<div class="grid--one grid--sm-half nog bgimg order--2" style="background-image:url('{{news.image|resize(1200)}}')"></div>
+		{% endif %}
+		<div class="grid--one spacing--vert-2 spacing--dsk-vert-3 spacing--horiz-1 spacing--dsk-horiz-4 {% if news.image %} grid--sm-half nog order--1{% endif %}">
+		<div class="color--white text--uppercase font--small block">Featured</div>
+		<div class="news--meta spacing--vert-1">
+			<time datetime="{{ news.date|date('Y-m-d')}}" class="font--bold color--white">{{news.date|date}}</time><br>
+			<a href="{{news.news.publication.url}}" target="{{news.news.publication.target}}" title="{{news.news.publication.title}}" class="color--white text--uppercase font--small block">{{news.news.publication.title}}</a>
+		</div>
+		<h2 class="transform--no font--abel font--thin margin--bot-2"><a class="color--white" href="{{news.link}}">{{ news.title|length > 80 ? news.title|slice(0, 80) ~ '...' : news.title  }}</a></h2>
+		<a class="color--white button text--uppercase font--small" href="{{news.link}}">Read More</a>
+	</div>
+	
+</article>
+{% endblock %}

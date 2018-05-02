@@ -23,4 +23,14 @@
         display: block;
         width: 100%;
     }
+
+    &.align--items-stretch {
+        .titlewrap {
+            @include media($screen-sm) {
+                top: 50%;
+                position: relative;
+                transform: translateY(-50%);
+            }
+        }
+    }
 }

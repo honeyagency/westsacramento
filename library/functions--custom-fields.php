@@ -107,9 +107,15 @@ function prepareOptions()
         'twitter'   => get_field('field_5ae89fdf069e8', 'options'),
         'instagram' => get_field('field_5ae89fe4069e9', 'options'),
     );
+    $connected = array(
+        'title'    => get_field('field_5aea3359c1003', 'options'),
+        'link'    => get_field('field_5aea3376c1005', 'options'),
+        'text' => get_field('field_5aea3364c1004', 'options'),
+    );
     $options = array(
-        'email'  => $email,
-        'social' => $social,
+        'email'     => $email,
+        'social'    => $social,
+        'connected' => $connected,
     );
     $section = array(
         'footer'  => $footer,
@@ -243,14 +249,9 @@ function prepareGetInvolvedFields()
         $item = null;
     }
 
-    $connected = array(
-        'title' => get_field('field_5ae904f34cdcf'),
-        'item'  => get_field('field_5ae904fe4cdd0'),
-    );
     $aside = array(
-        'title'     => get_field('field_5ae903eebd1ae'),
-        'item'      => $item,
-        'connected' => $connected,
+        'title' => get_field('field_5ae903eebd1ae'),
+        'item'  => $item,
     );
     $section = array(
         'content' => $content,
@@ -317,5 +318,30 @@ function prepareCommunitySuccess()
     );
     return $section;
 
-   
+}
+
+function prepareNewsFields()
+{
+    $news = array(
+        'publication' => get_field('field_5ae7a0762bfa3'),
+    );
+    return $news;
+}
+function prepareSuccessFields()
+{
+
+    $success = array(
+        'achievement' => get_field('field_5ae75b28bb14a'),
+        'description' => get_field('field_5ae75b96bb14c'),
+    );
+
+    return $success;
+}
+function prepareEventFields()
+{
+    $event = array(
+        'subtitle' => get_field('field_5aea26df69625'),
+        'date'     => get_field('field_5aea26fa69626'),
+    );
+    return $event;
 }

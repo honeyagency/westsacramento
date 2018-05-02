@@ -9,7 +9,7 @@
         }
 
 
-        h5 {
+        h5, h1 {
             @include media($screen-xs) {}
 
 

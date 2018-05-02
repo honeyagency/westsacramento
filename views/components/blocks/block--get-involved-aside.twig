@@ -8,8 +8,5 @@
 			<a class="color--blue text--uppercase font--small block" href="{{item.link.url}}" target="{{item.link.target}}" title="{{item.link.title}}">{{item.link.title}}</a>
 		</div>
 	{% endfor %}
-	<div class="bg--cream spacing--vert-2 spacing--horiz-2">
-		<strong class="block text--uppercase">{{involved.sidebar.connected.title}}</strong>
-		<div class="nop">{{involved.sidebar.connected.item}}</div>
-	</div>
+	{% include 'components/blocks/block--signup.twig' %}
 </aside>
