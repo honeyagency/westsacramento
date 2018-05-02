@@ -8,6 +8,12 @@
     }
 }
 
+.md--flex {
+    @include media($screen-md) {
+        display: flex;
+    }
+}
+
 .flex--wrap {
     flex-wrap: wrap;
 }
