@@ -4,8 +4,9 @@
         padding-bottom: 5em;
 
         @include media($screen-sm) {
-            padding-top: 10em;
-            padding-bottom: 10em;
+               padding-top: 7em;
+            padding-bottom: 5em;
+            
         }
 
 
@@ -29,15 +30,6 @@
 
 
             @include media($screen-xl) {}
-        }
-    }
-}
-
-.page-id-8 {
-    .titlewrap {
-        @include media($screen-sm) {
-            padding-top: 7em;
-            padding-bottom: 5em;
         }
     }
 }

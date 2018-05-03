@@ -1,23 +1,25 @@
 {% extends "base.twig" %}
 {% block content %}
 	<section class=" section--base-header section--title-header block--base-title flex flex--wrap justify--start align--items-stretch">
-		<div class="grid--one grid--md-two-fifths grid--lg-third bg--cream">
-			<div class="titlewrap spacing--horiz-3">
+		<div class="grid--one {% if post.get_thumbnail %}grid--md-half{% endif %} nog bg--cream">
+		<div class="titlewrap spacing--horiz-3">
+			{% if post.post_type == 'event' %}<h4 class="inherit">{{event.date|date('M d, Y')}}</h4>{% endif %}
+			<h1 class="h1 transform--no font--thin short inherit letter--0">{{post.title}}</h1>
+		</div>
+	</div>
+	{% if post.get_thumbnail %}
+		<div class="content grid--one grid--md-half nog">
+			
+			<img data-original="{{post.thumbnail.src|resize(640, 426) }}" src="{{post.thumbnail.src|resize(320, 213) }}" alt="" class="grid--one" data-original-set=" {{post.thumbnail.src|resize(320, 213) }}  320w, {{post.thumbnail.src|resize(375, 250) }}  375w, {{post.thumbnail.src|resize(540, 360) }} 540w, {{post.thumbnail.src|resize(640, 426) }} 640w, {{post.thumbnail.src|resize(683, 455) }} 683w, {{post.thumbnail.src|resize(720, 480) }} 720w, {{post.thumbnail.src|resize(960, 640) }} 960w" sizes="50vw">
+			
+		</div>
+	{% endif %}
+</section>
+<section class="flex flex--wrap justify--between align--items-start spacing--vert-3 ">
+	<div class="grid--one grid--md-two-fifths grid--lg-third nog spacing--gutter">
+		{% include 'components/blocks/block--signup.twig' %}
+	</div>
+	<div class="content grid--one grid--md-three-fifths spacing--gutter nog grid--lg-two-thirds">{{post.content}}</div>
+</section>
 
-				{% if post.post_type == 'event' %}<h4 class="inherit">{{event.date|date('M d, Y')}}</h4>{% endif %}
-				<h1 class="h1 transform--no font--thin short inherit letter--0">{{post.title}}</h1>
-			</div>
-		</div>
-		<div class="content grid--one grid--md-three-fifths grid--lg-two-thirds">
-			{% if post.get_thumbnail %}
-				<img src="{{post.thumbnail.src}}" alt="">
-			{% endif %}
-		</div>
-	</section>
-	<section class="flex flex--wrap justify--between align--items-start spacing--vert-3 ">
-		<div class="grid--one grid--md-two-fifths grid--lg-third spacing--gutter">
-			{% include 'components/blocks/block--signup.twig' %}
-		</div> 
-	</section>
-	<div class="content grid--one grid--md-three-fifths grid--lg-two-thirds">{{post.content}}</div>
 {% endblock %}
