@@ -32,3 +32,12 @@
         }
     }
 }
+
+.page-id-8 {
+    .titlewrap {
+        @include media($screen-sm) {
+            padding-top: 7em;
+            padding-bottom: 5em;
+        }
+    }
+}
