@@ -193,7 +193,8 @@ hr {
         border-bottom: 5px solid;
         width: 45px;
     }
-    &.thick{
+
+    &.thick {
         border-bottom: 15px solid;
     }
 }
@@ -207,6 +208,7 @@ hr {
     }
 
     h2 {
+        margin-top: 1em;
         margin-bottom: 1em;
         letter-spacing: 1px;
         font-size: 2rem;
