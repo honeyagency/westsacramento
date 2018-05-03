@@ -2,7 +2,11 @@
 	<ul class="dsk--flex flex--wrap justify--between">
 		{% for item in menu.get_items %}
 			<li class="nav-item {{item.classes | join(' ')}}">
-				<a class="nav-link text--uppercase color--white" href="{{item.get_link}}">{{item.title}}</a>
+				{% if item.get_link %}
+					<a class="nav-link text--uppercase color--white" href="{{item.get_link}}">{{item.title}}</a>
+				{% else %}
+					<span class="nav-link text--uppercase color--white" >{{item.title}}</span>
+				{% endif %}
 				{% if item.get_children %}
 					<a class="trigger--sub"><label class="hidden--dsk">+</label></a>
 					<ul class="nav nav-drop">

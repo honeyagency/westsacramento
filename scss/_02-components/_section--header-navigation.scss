@@ -48,7 +48,7 @@
             @include media($screen-md) {
                 font-size: .8em;
 
-                > a {
+                > a, > span {
                     letter-spacing: .5px;
                 }
             }
@@ -57,7 +57,7 @@
             @include media($screen-lg) {
                 font-size: .9em;
 
-                > a {
+                > a, > span {
                     letter-spacing: 1px;
                     font-weight: 600;
                 }
@@ -196,17 +196,17 @@
             }
         }
     }
-
 }
-.langtext{
+
+.langtext {
     @include media($max-lg) {
-        span{
+        span {
             display: none;
         }
-        &:before{
+
+        &:before {
             content: 'Lang' !important;
             display: inline-block;
-
         }
     }
 }
