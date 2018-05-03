@@ -1,18 +1,18 @@
 <section class="section--base-community bg--yellow">
 
 	<div class="flex flex--double flex--wrap justify--center spacing--gutter spacing--vert-3 spacing--dsk-vert-3">
-		<div class="grid--one">
+		<div class="grid--one margin--bot-2">
 			<h4 class="text--center text--uppercase font--bold">{{base.community.title}}</h4>
 			<hr class="small">
 		</div>
 		{% for item in base.community.item %}
-			<div class="block--success margin--top-2 margin--dsk-vert-4 spacing--horiz-1 grid--one grid--sm-third grid--md-third text--center font--abel">
+			<div class="block--success margin--top-2 spacing--horiz-1 grid--one grid--sm-third grid--md-third text--center font--abel">
 				<div class="h1 ">{{item.number}}</div>
 				<div class="font--large text--uppercase short">{{item.text}}</div>
 			</div>
 			{% if loop.last %}{% else %}<span class="border"></span>{% endif %}
 		{% endfor %}
-		<div class="grid--one margin--top-1 margin--vert-dsk-0">
+		<div class="grid--one margin--top-4">
 		<a class="button color--black center" href="{{base.community.link.url}}" target="{{base.community.link.target}}" title="{{base.community.link.title}}">{{base.community.link.title}}</a>
 	</div>
 	</div>
