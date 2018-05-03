@@ -26,6 +26,12 @@
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+
+        .trigger--close {
+            position: absolute;
+            top: 2em;
+            right: 3em;
+        }
     }
 }
 
