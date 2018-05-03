@@ -1,7 +1,7 @@
-<section class="section--base-started border--{{base.header.color}} spacing--gutter spacing--vert-2 spacing--dsk-vert-3">
+<section class="section--base-started border--{{base.header.color}} spacing--gutter spacing--vert-2  margin--top-2">
 	<h2>{{base.started.title}}</h2>
 
-	<div class="flex flex--wrap {% if base.started.steps|length < 3 %}justify--start{% else %}justify--between{% endif %} align--items-baseline">
+	<div class="flex flex--wrap justify--between align--items-baseline">
 		
 		{% for step in base.started.steps %}
 			<div class="grid--one {% if base.started.steps|length == 1 %}{% elseif base.started.steps|length == 2 %}grid--half{% else %}grid--sm-third{% endif %}">
