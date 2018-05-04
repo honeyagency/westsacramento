@@ -51,7 +51,7 @@ if (is_front_page()) {
 
         $context['featurednews'] = $feat;
 
-        $context['news'] = getCustomPosts('news', 3, null, 'date', $exclude, null);
+        $context['news'] = getCustomPosts('news', -1, null, 'date', $exclude, null);
     }
 }
 
