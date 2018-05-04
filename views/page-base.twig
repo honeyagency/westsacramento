@@ -7,7 +7,7 @@
 			<div class="spacing--gutter margin--bot-2">
 				{{base.content}}
 				{% include 'components/sections/section--base-started.twig' %}
-				{% include 'components/sections/section--base-started2.twig' %}
+				{% if base.secondstart.title %}{% include 'components/sections/section--base-started2.twig' %}{% endif %}
 			</div>
 			
 		</section>
