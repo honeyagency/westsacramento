@@ -5,4 +5,5 @@
 	{% for news in news %}
 		{% include 'tease-news.twig' %}
 	{% endfor %}
+	{% if pagination %}{% include 'components/sections/section--pagination.twig' %}{% endif %}
 </section>

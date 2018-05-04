@@ -36,7 +36,7 @@ if (is_front_page()) {
             $context['news']     = getCustomPosts('news', -1, null, 'date', null, null);
         } elseif ($type == 'success_story') {
             $context['filtered'] = 'Success Stories';
-            $context['stories']  = getCustomPosts('success_story', 5, null, 'date', null, null);
+            $context['stories']  = getCustomPosts('success_story', -1, null, 'date', null, null);
         }
 
     } else {

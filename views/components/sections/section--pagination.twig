@@ -1,0 +1,17 @@
+<section class="section--pagination font--cholla text--uppercase letter--1">
+
+	{% if pagination.prev != null %}
+		<a href="{{pagination.prev.link}}" class="{{pagination.prev.class}} color--black"><i class="icon-angle-right left" data-grunticon-embed></i> Previous Page</a>
+	{% endif %}
+	{% for page in pagination.pages %}
+		{% if page.current == false %}
+			<a href="{{page.link}}" class="{{page.class}} text--center"><span class="color--black">{{page.title}}</span></a>{% if loop.last %}{% else %}<span class="text--center">|</span>{% endif %}
+		{% else %}
+			<span class="color--gray text--center {{page.class}}">{% if pagination.prev == null %}<span class="color--gray text--center">Page </span>{% endif %}{{page.title}}</span>{% if loop.last %}{% else %}<span class="text--center">|</span>{% endif %}
+		{% endif %}
+	{% endfor %}
+
+	{% if pagination.next != null %}
+		<a href="{{pagination.next.link}}" class="{{pagination.next.class}} color--black">Next Page <i class="icon-angle-right" data-grunticon-embed></i></a>
+	{% endif %}
+</section>
