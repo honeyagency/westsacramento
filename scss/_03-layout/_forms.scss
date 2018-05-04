@@ -185,3 +185,42 @@ button, [type="submit"] {
     border: 2px solid $formbuttoncolor;
     text-transform: uppercase;
 }
+
+.gform_body {
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    ul {
+        @extend .flex;
+
+        @extend .flex--wrap;
+
+        @extend .justify--between;
+
+        .ginput_complex {
+            @extend .flex;
+
+            @extend .flex--wrap;
+
+            @extend .justify--between;
+
+            span {
+                @extend .grid--half;
+            }
+        }
+
+        input, textarea {
+            margin-bottom: 1em;
+            width: 100%;
+            border: 1px solid $lightgray;
+        }
+    }
+
+    label {
+        @extend .screenreader;
+    }
+}
