@@ -1,0 +1,13 @@
+<section class="section--base-started border--{{base.header.color}} spacing--horiz-1 spacing--vert-2  margin--top-2">
+	<h2>{{base.secondstart.title}}</h2>
+
+	<div class="flex flex--wrap flex--double justify--between align--items-baseline">
+		
+		{% for step in base.secondstart.steps %}
+			<div class="grid--one margin--vert-1 {% if base.secondstart.steps|length == 1 %}{% elseif base.secondstart.steps|length == 2 %}grid--half{% else %}grid--sm-third grid--md-third{% endif %}">
+				<h5 class="h1 mar--no">{{step.title}}</h5>
+				<div class="font--small">{{step.text}}</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

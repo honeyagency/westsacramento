@@ -108,9 +108,9 @@ function prepareOptions()
         'instagram' => get_field('field_5ae89fe4069e9', 'options'),
     );
     $connected = array(
-        'title'    => get_field('field_5aea3359c1003', 'options'),
-        'link'    => get_field('field_5aea3376c1005', 'options'),
-        'text' => get_field('field_5aea3364c1004', 'options'),
+        'title' => get_field('field_5aea3359c1003', 'options'),
+        'link'  => get_field('field_5aea3376c1005', 'options'),
+        'text'  => get_field('field_5aea3364c1004', 'options'),
     );
     $options = array(
         'email'     => $email,
@@ -166,6 +166,24 @@ function prepareBaseFields()
         'title' => get_field('field_5ae7579ef0e81'),
         'steps' => $steps,
     );
+    if (have_rows('field_5aebc0cce7695')) {
+        $steps2 = array();
+        while (have_rows('field_5aebc0cce7695')) {
+            the_row();
+            $steps2[] = array(
+                'title' => get_sub_field('field_5aebc0cce7696'),
+                'text'  => get_sub_field('field_5aebc0cce7697'),
+            );
+        }
+    } else {
+        $steps2 = null;
+    }
+
+    $secondstart = array(
+        'title' => get_field('field_5aebc0c2e7691'),
+        'steps' => $steps2,
+    );
+
     $storyArray = get_field('field_5ae7581ff0e86');
     $stories    = array();
     if (!empty($storyArray)) {
@@ -206,6 +224,7 @@ function prepareBaseFields()
         'header'    => $header,
         'content'   => get_field('field_5ae75773f0e7f'),
         'started'   => $started,
+        'secondstart'  => $secondstart,
         'stories'   => $stories,
         'community' => $community,
     );

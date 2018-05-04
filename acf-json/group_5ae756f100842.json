@@ -356,6 +356,100 @@
             ]
         },
         {
+            "key": "field_5aebc0bbe7690",
+            "label": "Get Started (2)",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5aebc0c2e7691",
+            "label": "Title",
+            "name": "get_started_title_copy",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5aebc0cce7695",
+            "label": "Get Started Steps",
+            "name": "get_started_steps_secondary",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Get Started Step",
+            "sub_fields": [
+                {
+                    "key": "field_5aebc0cce7696",
+                    "label": "Title",
+                    "name": "get_started_step_title_second",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5aebc0cce7697",
+                    "label": "Text",
+                    "name": "get_started_step_text_second",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                }
+            ]
+        },
+        {
             "key": "field_5ae75817f0e85",
             "label": "Success Stories",
             "name": "",
@@ -543,5 +637,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1525213946
+    "modified": 1525400616
 }
