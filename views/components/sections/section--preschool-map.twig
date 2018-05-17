@@ -6,7 +6,7 @@
       function initMap() {
       	var map;
       	
-		var schools = [{% for school in schools.schools %}['{{school.title}}', {{school.location.lat}}, {{school.location.lng}}, {{loop.index}}, '<div class="schoolInfo"><strong>{{school.title}}</strong><br>{{school.phone}}<br><a href="#school-{{loop.index}}">More Info</a></div>']{% if loop.last %}{% else %},{% endif %}{% endfor %}];
+		var schools = [{% for school in schools.schools %}['{{school.title}}', {{school.location.lat}}, {{school.location.lng}}, {{loop.index}}, '<div class="schoolInfo"><strong>{{school.title}}</strong><br><a href="#school-{{loop.index}}">More Info</a></div>']{% if loop.last %}{% else %},{% endif %}{% endfor %}];
       	
 
       	
@@ -55,7 +55,7 @@
         "visibility": "off"
       },
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -64,7 +64,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#f3efe8"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -73,7 +73,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -82,7 +82,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -91,7 +91,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -127,7 +127,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -136,7 +136,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -145,7 +145,7 @@
     "elementType": "all",
     "stylers": [
       {
-        "color": "#faf4f1"
+        "color": "#FAF4F1"
       }
     ]
   },
@@ -214,7 +214,7 @@
         "visibility": "on"
       },
       {
-        "hue": "#ff8c00"
+        "hue": "#0047bb"
       }
     ]
   },
@@ -282,7 +282,7 @@
         });
           var pin = {
           path: 'M39.49,20c0,11-19.74,33.42-19.74,33.42S0,31,0,20A19.85,19.85,0,0,1,19.75,0,19.85,19.85,0,0,1,39.49,20ZM19.75,12.37A7.67,7.67,0,1,0,27.41,20,7.66,7.66,0,0,0,19.75,12.37Z',
-          fillColor: '#ed5743',
+          fillColor: '#DA291C',
           fillOpacity: 1,
           scale: 1,
           strokeWeight: 0,
@@ -294,7 +294,7 @@
              var marker = new google.maps.Marker({
                  position: new google.maps.LatLng(schools[i][1], schools[i][2]),
                  map: map,
-                 // icon: pin,
+                 icon: pin,
                  title: schools[i][0]
              });
              google.maps.event.addListener(marker, 'click', (function(marker, i) {
