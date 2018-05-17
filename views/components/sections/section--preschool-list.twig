@@ -1,11 +1,10 @@
 <section class="section--school-list">
   {% for school in schools.schools %}
     <div class="block--preschool margin--vert-2 margin--dsk-vert-4" id="school-{{loop.index}}">
-{% if school.title %}<h3>{{school.title}}</h3>{% endif %}
-{% if school.location %}<div class="meta margin--top-1"><strong>Address<span class="hidden--mob">: </span></strong>{{school.location.address}}</div>{% endif %}
-{% if school.phone %}<div class="meta margin--bot-1"><strong>Phone<span class="hidden--mob">: </span></strong>{{school.phone}}</div>{% endif %}
-{% if school.website %}<a href="{{school.website}}" target="_blank" class="button ">View Website</a>{% endif %}
+      {% if school.title %}<h3>{{school.title}}</h3>{% endif %}
+      {% if school.location %}<div class="meta margin--top-1"><strong>Address<span class="hidden--mob">: </span></strong>{{school.location.address}}</div>{% endif %}
+      {% if school.phone %}<div class="meta margin--bot-1"><strong>Phone<span class="hidden--mob">: </span></strong>{{school.phone}}</div>{% endif %}
+      {% if school.website %}<a href="{{school.website}}" target="_blank" class="button ">View Website</a>{% endif %}
     </div>
   {% endfor %}
 </section>
-
