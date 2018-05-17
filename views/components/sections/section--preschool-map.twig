@@ -1,0 +1,309 @@
+<section class="section--school-map" id="map">
+
+</section>
+
+ <script>
+      function initMap() {
+      	var map;
+      	
+		var schools = [{% for school in schools.schools %}['{{school.title}}', {{school.location.lat}}, {{school.location.lng}}, {{loop.index}}, '<div class="schoolInfo"><strong>{{school.title}}</strong><br>{{school.phone}}<br><a href="#school-{{loop.index}}">More Info</a></div>']{% if loop.last %}{% else %},{% endif %}{% endfor %}];
+      	
+
+      	
+      	var styledMapType = new google.maps.StyledMapType([
+  {
+    "featureType": "all",
+    "elementType": "all",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "all",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "all",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "all",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "all",
+    "stylers": [
+      {
+        "visibility": "off"
+      },
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#f3efe8"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.attraction",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.business",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.government",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#dfdcd5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.medical",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#dfdcd5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#bad294"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.place_of_worship",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.school",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.sports_complex",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#faf4f1"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "all",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      },
+      {
+        "hue": "#ffc601"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "hue": "#ff0000"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#193942"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "on"
+      },
+      {
+        "hue": "#ff8c00"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#fbfbfb"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "all",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#a5d7e0"
+      }
+    ]
+  }
+]);
+      	
+      	var mapCenter = {lat:{{schools.center.lat}}, lng: {{schools.center.lng}}};
+        
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: mapCenter
+        });
+          var pin = {
+          path: 'M39.49,20c0,11-19.74,33.42-19.74,33.42S0,31,0,20A19.85,19.85,0,0,1,19.75,0,19.85,19.85,0,0,1,39.49,20ZM19.75,12.37A7.67,7.67,0,1,0,27.41,20,7.66,7.66,0,0,0,19.75,12.37Z',
+          fillColor: '#ed5743',
+          fillOpacity: 1,
+          scale: 1,
+          strokeWeight: 0,
+        };
+         map.mapTypes.set('styled_map', styledMapType);
+         map.setMapTypeId('styled_map');
+         var infowindow = new google.maps.InfoWindow();
+         for (var i = 0; i < schools.length; i++) {
+             var marker = new google.maps.Marker({
+                 position: new google.maps.LatLng(schools[i][1], schools[i][2]),
+                 map: map,
+                 // icon: pin,
+                 title: schools[i][0]
+             });
+             google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                     infowindow.setContent(schools[i][4]);
+                     infowindow.open(map, marker);
+                 }
+             })(marker, i));
+         }
+      }
+    </script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD59n0nZLlpJkUuRagRXj7Xx5d_r_ogkcM&callback=initMap"></script>

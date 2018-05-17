@@ -53,6 +53,8 @@ if (is_front_page()) {
 
         $context['news'] = getCustomPosts('news', -1, null, 'date', $exclude, null);
     }
+}elseif (is_page(328)) {
+    $context['schools'] = preparePreschoolMap();
 }
 
 if (is_page(24) || is_page(25) || is_page(26)) {

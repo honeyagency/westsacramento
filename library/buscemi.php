@@ -89,6 +89,14 @@ function cc_mime_types($mimes)
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+function my_acf_init()
+{
+
+    acf_update_setting('google_api_key', 'AIzaSyD59n0nZLlpJkUuRagRXj7Xx5d_r_ogkcM');
+}
+
+add_action('acf/init', 'my_acf_init');
+
 // Setting up ACF options page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();

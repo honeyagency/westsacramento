@@ -1,0 +1,31 @@
+.section--school-map {
+    min-height: 430px;
+    margin-bottom: 1em;
+}
+
+.block--preschool {
+    @include media($max-xs) {}
+
+
+    @include media($max-sm) {
+        strong {
+            text-transform: uppercase;
+            letter-spacing: 0;
+            display: block;
+        }
+
+        .meta {
+            font-size: .85em;
+        }
+    }
+
+
+    @include media($screen-xs) {}
+
+
+    @include media($screen-sm) {
+        p {
+            display: inline;
+        }
+    }
+}

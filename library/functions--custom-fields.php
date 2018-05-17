@@ -221,12 +221,12 @@ function prepareBaseFields()
         'link'  => get_field('field_5ae756c07z17x'),
     );
     $base = array(
-        'header'    => $header,
-        'content'   => get_field('field_5ae75773f0e7f'),
-        'started'   => $started,
-        'secondstart'  => $secondstart,
-        'stories'   => $stories,
-        'community' => $community,
+        'header'      => $header,
+        'content'     => get_field('field_5ae75773f0e7f'),
+        'started'     => $started,
+        'secondstart' => $secondstart,
+        'stories'     => $stories,
+        'community'   => $community,
     );
     return $base;
 }
@@ -363,4 +363,27 @@ function prepareEventFields()
         'date'     => get_field('field_5aea26fa69626'),
     );
     return $event;
+}
+
+function preparePreschoolMap()
+{
+    if (have_rows('field_5afcbd990314c')) {
+        $schools = array();
+        while (have_rows('field_5afcbd990314c')) {
+            the_row();
+            $schools[] = array(
+                'title'    => get_sub_field('field_5afcbdab0314d'),
+                'phone'    => get_sub_field('field_5afcbdc803150'),
+                'website'  => get_sub_field('field_5afcbdb00314e'),
+                'location' => get_sub_field('field_5afcbdb70314f'),
+            );
+        }
+    } else {
+        $schools = null;
+    }
+    $maps = array(
+        'schools' => $schools,
+        'center'  => get_field('field_5afdc61422398'),
+    );
+    return $maps;
 }
