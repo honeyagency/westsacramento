@@ -11,6 +11,7 @@ function prepareHomepageFields()
     $header = array(
         'image' => $headerImage,
         'title' => get_field('field_5ae755af41db7'),
+        'link'  => get_field('field_5b5799b5abbf1'),
     );
 
     if (have_rows('field_5ae755d941db9')) {
