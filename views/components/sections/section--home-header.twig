@@ -4,6 +4,8 @@
 	</div>
 	<section class="home--header-content flex flex--wrap justify--between align--items-center">
 		<div class="grid--md-two-fifths block--logo"><i class="icon-logo-nobg" data-grunticon-embed></i></div>
-		<div class="block--home-title margin--center grid--md-three-fifths spacing--vert-3 spacing--gutter-mob"><h1 class="color--white transform--no font--thin h2">{{home.header.title}}</h1></div>
+		<div class="block--home-title margin--center grid--md-three-fifths spacing--vert-3 spacing--gutter-mob"><h1 class="color--white transform--no font--thin h2">{{home.header.title}}</h1>
+			{% if home.header.link %}<a class="text--uppercase margin--top-2 inline-block bg--white color--black button" href="{{home.header.link.url}}" title="{{home.header.link.title}}" target="{{home.header.link.target}}">{{home.header.link.title}}</a>{% endif %}
+		</div>
 	</section>
 </section>
