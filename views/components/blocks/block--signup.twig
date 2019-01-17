@@ -1,4 +1,6 @@
+{% if options.options.connected.link %}
 <div class="block--signup bg--cream spacing--vert-2 spacing--horiz-2">
 	{% if options.options.connected.title %}<strong class="block text--uppercase">{{options.options.connected.title}}</strong>{% endif %}
 	<div><a href="" class="trigger--email font--small text--uppercase">{{options.options.connected.link}}</a> {{options.options.connected.text}}</div>
 </div>
+{% endif %}
