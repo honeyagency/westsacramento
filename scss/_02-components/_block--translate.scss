@@ -26,6 +26,16 @@
         padding: 0;
         margin: 0 !important;
     }
+
+    @include media($max-sm) {
+        margin-top: 10px;
+
+        select {
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+    }
 }
 
 @include media($screen-sm) {
