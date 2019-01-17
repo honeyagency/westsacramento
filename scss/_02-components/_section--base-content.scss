@@ -71,7 +71,7 @@
 
         .prevnext {
             i {
-                display: inline-table;
+                display: inline-block;
                 width: 10px;
                 height: 10px;
                 margin-right: .5em;
@@ -79,7 +79,9 @@
                 &.right {
                     margin-right: 0;
                     margin-left: .5em;
-                    transform: rotate(180deg);
+                    svg{
+                        transform: rotate(180deg);
+                    }
                 }
             }
 

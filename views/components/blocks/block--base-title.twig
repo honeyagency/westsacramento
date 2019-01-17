@@ -9,12 +9,12 @@
 		{% if base.header.prev.link.url %}
 			{# theres a previous link #}
 			<div class="bg--{{base.header.prev.color}} spacing--vert-1 {% if base.header.next.link.url %}grid--half{% else %}grid--one{% endif %} nog">
-			<a href="{{base.header.prev.link.url}}" target="{{base.header.prev.link.target}}" title="{{base.header.prev.link.title}}" class="button center"><i class="icon-arrow left" data-grunticon-embed></i>{{base.header.prev.link.title}}</a>
+			<a href="{{base.header.prev.link.url}}" target="{{base.header.prev.link.target}}" title="{{base.header.prev.link.title}}" class="button center icon"><i class="icon-arrow left" data-grunticon-embed></i><span>{{base.header.prev.link.title}}</span></a>
 		</div>
 	{% endif %}
 	{% if base.header.next.link.url %}
 		<div class="bg--{{base.header.next.color}} spacing--vert-1 {% if base.header.prev.link.url %}grid--half{% else %}grid--one{% endif %} nog">
-		<a href="{{base.header.next.link.url}}" target="{{base.header.next.link.target}}" title="{{base.header.next.link.title}}" class="button center">{{base.header.next.link.title}}<i class="icon-arrow right" data-grunticon-embed></i></a>
+		<a href="{{base.header.next.link.url}}" target="{{base.header.next.link.target}}" title="{{base.header.next.link.title}}" class="button center icon"><span>{{base.header.next.link.title}}</span><i class="icon-arrow right" data-grunticon-embed></i></a>
 	</div>
 {% endif %}
 </div>

@@ -34,8 +34,8 @@
 }
 
 .spacing--gutter {
-		padding-right: 1.7em * $grid;
-		padding-left: 1.7em * $grid;
+		padding-right: .7em * $grid;
+		padding-left: .7em * $grid;
     
     @include media($screen-md) {
     	padding-right: 3em * $grid;
@@ -55,8 +55,8 @@
 
 .spacing--gutter-dsk {
 	@include media($screen-sm){
-		padding-left: 1.7em * $grid;
-		padding-right: 1.7em * $grid;
+		padding-left: .7em * $grid;
+		padding-right: .7em * $grid;
 	}
     @include media($screen-md) {
 		padding-right: 3em * $grid;
@@ -66,7 +66,7 @@
 
 .spacing--gutter-mob {
 	@include media($max-sm) {
-		padding-left: 1.7em * $grid;
-		padding-right: 1.7em * $grid;
+		padding-left: .7em * $grid;
+		padding-right: .7em * $grid;
 	}
 }
