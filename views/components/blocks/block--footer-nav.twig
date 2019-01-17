@@ -1,6 +1,6 @@
 {% if loop.last %}<img src="{{options.footer.logo}}" alt="{{options.footer.logo.alt}}" width="75" height="75" />{% endif %}
 <ul class="block--footer-nav grid--half grid--sm-fifth spacing--horiz-half">
-	{% if loop.index > 2  %}{% set color = 'color--gray-light' %}{% set size = 'font--smaller' %}{% else %}{% set color = 'color--black' %}{% set size = 'font--small' %}{% endif %}
+	{% if loop.index > 2  %}{% set color = 'color--gray' %}{% set size = 'font--smaller' %}{% else %}{% set color = 'color--black' %}{% set size = 'font--small' %}{% endif %}
 	{% for item in nav %}
 		{% set nourl = site.url ~ '/' %}
 		{% if item.url == nourl or item.url == site.url %}
