@@ -269,10 +269,14 @@ function prepareGetInvolvedFields()
         $item = null;
     }
 
-    $aside = array(
-        'title' => get_field('field_5ae903eebd1ae'),
-        'item'  => $item,
-    );
+    if ($item != null) {
+        $aside = array(
+            'title' => get_field('field_5ae903eebd1ae'),
+            'item'  => $item,
+        );
+    } else {
+        $aside = null;
+    }
     $section = array(
         'content' => $content,
         'sidebar' => $aside,

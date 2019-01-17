@@ -5,6 +5,6 @@
 	{% endif %}
 	<article class="section--get-involved-wrap md--flex flex--wrap spacing--dsk-vert-2 justify--start align--items-baseline">
 		{% include 'components/sections/section--get-involved-content.twig' %}
-		{% include 'components/blocks/block--get-involved-aside.twig' %}
+		{% if involved.sidebar %}{% include 'components/blocks/block--get-involved-aside.twig' %}{% endif %}
 	</article>
 {% endblock %}

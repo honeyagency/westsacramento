@@ -1,9 +1,8 @@
 {% extends "base.twig" %}
 {% block content %}
-<section class=" section--base-header section--title-header block--base-title flex flex--wrap justify--start align--items-stretch">
+	<section class=" section--base-header section--title-header block--base-title flex flex--wrap justify--start align--items-stretch">
 		<div class="grid--one {% if post.get_thumbnail %}grid--md-half{% endif %} nog bg--cream">
 		<div class="titlewrap spacing--horiz-2 spacing--dsk-horiz-3">
-
 			<h1 class="h1 transform--no font--thin short inherit letter--0">{{post.title}}</h1>
 		</div>
 	</div>
@@ -15,14 +14,10 @@
 		</div>
 	{% endif %}
 </section>
-	<section class="dsk--flex flex--wrap justify--between align--items-start spacing--vert-3 ">
-		<div class=" content grid--one grid--md-three-fifths grid--lg-two-thirds nog spacing--gutter order--2">
+<section class="dsk--flex flex--wrap {% if options.options.connected.link %}justify--between{% else %}justify--center{% endif %} align--items-start spacing--vert-3 ">
+	<div class=" content grid--one grid--md-three-fifths grid--lg-two-thirds nog spacing--gutter order--2">
 		{{post.content}}
 	</div>
-		<div class="grid--one grid--md-two-fifths grid--lg-third nog spacing--gutter order--1">
-			{% include 'components/blocks/block--signup.twig' %}
-		</div>
-		
-	</section>
-
+	{% if options.options.connected.link %}<div class="grid--one grid--md-two-fifths grid--lg-third nog spacing--gutter order--1">{% include 'components/blocks/block--signup.twig' %}</div>{% endif %}
+</section>
 {% endblock %}

@@ -1,12 +1,11 @@
 <aside class="grid--one grid--md-two-fifths grid--lg-third order--1 spacing--gutter spacing--dsk-vert-4">
 	<div class="grid--one"><h4 class=" text--uppercase font--bold">{{involved.sidebar.title}}</h4>
 	<hr class="small text--left margin--horiz-0"></div>
-
 	{% for item in involved.sidebar.item %}
 		<div class="margin--vert-3">
-			<div class="font--large font--abel short margin--bot-half">{{item.title}}</div>
-			<a class="color--blue text--uppercase font--small block" href="{{item.link.url}}" target="{{item.link.target}}" title="{{item.link.title}}">{{item.link.title}}</a>
+			{% if item.title %}<div class="font--large font--abel short margin--bot-half">{{item.title}}</div>{% endif %}
+			{% if item.link.url %}<a class="color--blue text--uppercase font--small block" href="{{item.link.url}}" target="{{item.link.target}}" title="{{item.link.title}}">{{item.link.title}}</a>{% endif %}
 		</div>
 	{% endfor %}
-	{% include 'components/blocks/block--signup.twig' %}
+	{% if options.options.connected.link %}{% include 'components/blocks/block--signup.twig' %}{% endif %}
 </aside>
