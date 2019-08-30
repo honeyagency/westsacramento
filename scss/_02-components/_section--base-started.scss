@@ -1,19 +1,24 @@
 .section--base-started {
     border-top: 15px solid;
     border-bottom: 15px solid;
-&:nth-of-type(2){
-border-top: none;
-}
+
+    &:nth-of-type(2) {
+        border-top: none;
+    }
+
     &.border--blue {
-        border-color: ($blue);
+        border-color: $blue;
     }
 
     &.border--yellow {
-        border-color: ($yellow);
+        border-color: $yellow;
     }
 
     &.border--red {
-        border-color: ($red);
+        border-color: $red;
     }
-    
+
+    h2 {
+        margin: 0;
+    }
 }
