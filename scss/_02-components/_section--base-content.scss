@@ -59,14 +59,6 @@
             @include media($screen-md) {
                 font-size: 1.9em;
             }
-
-
-            @include media($screen-lg) {
-                font-size: 2.5em;
-            }
-
-
-            @include media($screen-xl) {}
         }
 
         .prevnext {
@@ -79,7 +71,8 @@
                 &.right {
                     margin-right: 0;
                     margin-left: .5em;
-                    svg{
+
+                    svg {
                         transform: rotate(180deg);
                     }
                 }
@@ -114,6 +107,4 @@
             }
         }
     }
-
-   
 }
