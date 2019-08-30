@@ -3,6 +3,7 @@
 	<hr class="small">
 	{# {{home|print_r}} #}
 	<div class="block--steps-wrap flex flex--double flex--wrap justify--between align--items-stretch text--center spacing--vert-2 spacing--gutter spacing--dsk-horiz-3">
+
 		{% for step in home.steps.steps %}
 			{% include 'components/blocks/block--home-step.twig' %}
 		{% endfor %}
