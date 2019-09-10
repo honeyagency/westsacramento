@@ -70,6 +70,7 @@ jQuery(document).ready(function($) {
         });
     });
     
+
     $('#trigger-translate').on('click touchstart', function(event) {
         event.preventDefault();
         $wrap = $(this).parent('.section--language').find('.block--translate');

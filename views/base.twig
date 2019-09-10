@@ -25,9 +25,14 @@
 <section class="section--email-signup">
 	<div class="block--signup bg--cream grid--four-fifths grid--sm-two-thirds grid--md-half spacing--gutter margin--center spacing--vert-4">
 		<label class="trigger--close font--tiny text--uppercase ">Close</label>
-	{% if options.options.email.title %}<h5 class="transform--no font--standard font--one">{{options.options.email.title}}</h5>{% endif %}
-	{% if options.options.email.embed %}<div class="margin--top-1">{{options.options.email.embed}}</div>{% endif %}
+		{% if options.options.email.title %}<h5 class="transform--no font--standard font--one">{{options.options.email.title}}</h5>{% endif %}
+		{% if options.options.email.embed %}<div>{{options.options.email.embed}}</div>{% endif %}
 	</div>
+	<script> var _ctct_m = "7823b0fe4b5783414de057e69f090443"; </script>
+	<script id="signupScript" src="https://static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+
 </section>
+{# The following is to remove the garbage these jokers at constant contact add in. #}
+<style type="text/css" media="screen">.ctct-form-embed,.ctct-form-embed>.ctct-form-defaults{background-color:transparent!important;padding:0!important}form.ctct-form-custom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end}.ctct-form-button{flex-basis:30%;width:auto;padding:.5em 1em;height:53px;text-transform:uppercase!important;background-color:transparent!important;border:2px solid #333!important;color:#333}#gdpr_text,.ctct-form-embed .ctct-form-header,.ctct-form-footer,.grecaptcha-badge{position:absolute;left:-10000px;top:auto;height:1px;width:1px;overflow:hidden}div.ctct-form-embed form.ctct-form-custom input.ctct-form-element{font-size:1rem;font-family:Work Sans,-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;color:#333;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;border-radius:0!important;box-shadow:none;box-sizing:border-box;padding:.9em 1.5em;transition:color .2s ease-in-out;height:unset}#email_address_field_0{flex-basis:66%;margin:0}</style>
 </body>
 </html>
